@@ -7,52 +7,43 @@ $data = "DATE_FORMAT(Prenotazioni.Data, '%d/%m/%Y')";
 
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 
-if(isset($_SESSION[$datiProfilo]))
-{
-	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario')
-	{
+if(isset($_SESSION[$datiProfilo])){
+	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario'){
 		header("location: /index.php");
 		die();
 	}
-	else
-	{
+	else{
 		$sql = "SELECT Locali.Foto1, Locali.Nome, Prenotazioni.Id, $data AS Data, Prenotazioni.Stato FROM Prenotazioni INNER JOIN Locali
 				ON Locali.Id = Prenotazioni.LocaleId WHERE Prenotazioni.UserId =".$_SESSION[$datiProfilo]['Id']." ORDER BY Data";
 		
 		$result = mysqli_query($con,$sql);
 	}
 }
-else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{
+else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	$sql2 = "SELECT Id, Tipo FROM Users WHERE Random = '".$_COOKIE[$randomValue]."' AND Attivo = '1'";
 	$result2 = mysqli_query($con,$sql2);
 	
-	if(mysqli_num_rows($result2) > 0)
-	{	
+	if(mysqli_num_rows($result2) > 0){	
 		$res2 = mysqli_fetch_assoc($result2);
 	}
-	else 
-	{ 
+	else { 
 		setcookie($randomValue, 'Deleted', time()-(60*60*24*365));
 		header("location: /index.php"); 
 		die();
 	}
 	
-	if($res2['Tipo'] === 'Proprietario')
-	{
+	if($res2['Tipo'] === 'Proprietario'){
 		header("location: /index.php");
 		die();
 	}
-	else
-	{
+	else{
 		$sql = "SELECT Locali.Foto1, Locali.Nome, Prenotazioni.Id, $data AS Data, Prenotazioni.Stato FROM Prenotazioni INNER JOIN Locali
 				ON Locali.Id = Prenotazioni.LocaleId WHERE Prenotazioni.UserId =".$_SESSION[$datiProfilo]['Id'];
 		
 		$result = mysqli_query($con,$sql);
 	}	
 }
-else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{
+else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	header("location: /login.php");
 	die();
 }
@@ -87,18 +78,14 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 	</tr>
 	
 	<?php 
-	if(mysqli_num_rows($result) > 0)
-	{
-		while($res = mysqli_fetch_array($result))
-		{
+	if(mysqli_num_rows($result) > 0){
+		while($res = mysqli_fetch_array($result)){
 			print "<tr><td align='center'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 
-			if($res['Foto1'] === '')
-			{
+			if($res['Foto1'] === ''){
 				print "src='Immagini/white.png'>";
 			}
-			else
-			{
+			else{
 				print "src='data:image;base64,".$res['Foto1']."'>";
 			}
 			print "</td><td align='center' style='padding: 5px'>".$res['Nome']."</td>
@@ -109,7 +96,9 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 					</td></tr>";
 		} 
 	}
-	else { print '<tr><td align="center" style="padding: 5px" colspan="5">Nessuna prenotazione effettuata</td></tr>'; }
+	else { 
+		print '<tr><td align="center" style="padding: 5px" colspan="5">Nessuna prenotazione effettuata</td></tr>'; 
+	}
 	?>
 </table>
 </body>

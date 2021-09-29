@@ -5,15 +5,12 @@ $datiProfilo = 'dh7aP7fj4ho';
 
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 
-if(isset($_SESSION[$datiProfilo]))
-{
-	if($_SESSION[$datiProfilo]['Tipo'] === 'Cliente')
-	{
+if(isset($_SESSION[$datiProfilo])){
+	if($_SESSION[$datiProfilo]['Tipo'] === 'Cliente'){
 		header("location: /index.php");
 		die();
 	}	
-	else if(isset($_GET['Nome']) && isset($_GET['Id']))
-	{
+	else if(isset($_GET['Nome']) && isset($_GET['Id'])){
 		$NomeLocale = $_GET['Nome'];
 		$LocaleId = $_GET['Id'];
 		
@@ -21,28 +18,24 @@ if(isset($_SESSION[$datiProfilo]))
 		$result2 = mysqli_query($con,$sql2);
 		$res2 = mysqli_fetch_assoc($result2);
 		
-		if($res2['UserId'] == $_SESSION[$datiProfilo]['Id'])
-		{
+		if($res2['UserId'] == $_SESSION[$datiProfilo]['Id']){
 			$sql = "SELECT Id,Tipo,Nome,Prezzo,Ingredienti,Foto FROM Menu WHERE LocaleId = '$LocaleId' AND Attivo = '1' ORDER BY case 
 					when Tipo = 'Antipasto' then 1 when Tipo = 'Primo' then 2 when Tipo = 'Secondo' then 3 when Tipo = 'Dolce' then 4 
 					when Tipo = 'Pizza' then 5 when Tipo = 'Panino' then 6 else 7 end asc";
 			
 			$result = mysqli_query($con,$sql);
 		}
-		else
-		{
+		else{
 			header("location: /locali.php");
 			die();
 		}		
 	}
-	else
-	{
+	else{
 		header("location: /locali.php");
 		die();
 	}
 }
-else
-{
+else{
 	header("location: /index.php");
 	die();
 }
@@ -100,17 +93,14 @@ else
 	$oggetto = '"menù"';
 	$Tabella = '"Menu"';
 			
-	while($res = mysqli_fetch_array($result))
-	{
+	while($res = mysqli_fetch_array($result)){
 		print "<tr id='".$res['Id']."'><td align='center'>".$res['Tipo']."</td><td align='center'>".$res['Nome']."</td><td align='center'>€".$res['Prezzo']."</td>
 				<td align='center' style='word-break: break-all;' width='300px'>".$res['Ingredienti']."</td><td align='center'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 		
-		if($res['Foto'] === '')
-		{
+		if($res['Foto'] === ''){
 			print "src='Immagini/white.png'>";
 		}
-		else
-		{
+		else{
 			print "src='data:image;base64,".$res['Foto']."'>";
 		}
 		print "</td><td align='center'><a class='manina' onclick='rimuovi(".$res['Id'].",".'"menù"'.",".'"Menu"'.")'><font color='1E42C1'>Rimuovi</font></a></td></tr>";

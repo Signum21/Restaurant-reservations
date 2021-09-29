@@ -30,8 +30,7 @@ $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 $sql = "INSERT INTO Prenotazioni (UserId,LocaleId,Data,Ora,Persone,Stato) 
 		VALUES ('$idUtente','$idLocale','$dataPrenotazione','$ora','$persone','Richiesta')";
 
-if(mysqli_query($con,$sql))
-{
+if(mysqli_query($con,$sql)){
 	$sql2 = "SELECT Id FROM Prenotazioni WHERE UserId = '$idUtente' AND LocaleId = '$idLocale' ORDER BY Id DESC LIMIT 1";
 	$result = mysqli_query($con,$sql2);
 	$res = mysqli_fetch_assoc($result);
@@ -39,22 +38,17 @@ if(mysqli_query($con,$sql))
 	$i = 1;
 	$beforeMenu = '';
 	
-	foreach($_POST as $key => $value)
-	{
-		if(substr($key,0,4) != 'menu' && substr($key,0,4) != 'idUt')
-		{
+	foreach($_POST as $key => $value){
+		if(substr($key,0,4) != 'menu' && substr($key,0,4) != 'idUt'){
 			break;
 		}
-		else if(substr($key,0,4) == 'menu')
-		{
-			if($value == $beforeMenu)
-			{
+		else if(substr($key,0,4) == 'menu'){
+			if($value == $beforeMenu){
 				$i++;
 				$sql4 = "UPDATE menu_prenotazioni SET Quantita = '$i' WHERE PrenotazioneId = '$prenotazioneId' ORDER BY Id DESC LIMIT 1";
 				mysqli_query($con,$sql4);
 			}
-			else
-			{
+			else{
 				$i = 1;
 				$sql3 = "INSERT INTO menu_prenotazioni (PrenotazioneId,MenuId,Quantita) VALUES ('$prenotazioneId','$value','$i')";
 				mysqli_query($con,$sql3);
@@ -64,5 +58,7 @@ if(mysqli_query($con,$sql))
 	}
 	echo '1';
 }
-else { echo '0'; }
+else { 
+	echo '0'; 
+}
 ?>

@@ -8,26 +8,21 @@ $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 $res = '';
 $result2 = '';
 
-function mostra()
-{
+function mostra(){
 	global $con;
 	global $res;
 	global $result2;
 	
-	if(isset($_GET['Id']))
-	{
+	if(isset($_GET['Id'])){
 		$Id = $_GET['Id'];
 	}
-	$sql = "SELECT Nome, Numero, Citta, CAP, Indirizzo, NumeroCivico, Foto1, Foto2, Foto3, Foto4 FROM Locali WHERE Id = '$Id' AND Attivo = 1";
-	
+	$sql = "SELECT Nome, Numero, Citta, CAP, Indirizzo, NumeroCivico, Foto1, Foto2, Foto3, Foto4 FROM Locali WHERE Id = '$Id' AND Attivo = 1";	
 	$result = mysqli_query($con,$sql);
 
-	if(mysqli_num_rows($result) > 0)
-	{
+	if(mysqli_num_rows($result) > 0){
 		$res = mysqli_fetch_assoc($result);
 	}
-	else
-	{
+	else{
 		header("location: /ricercaLocali.php");
 		die();
 	}
@@ -39,43 +34,36 @@ function mostra()
 	$result2 = mysqli_query($con,$sql2);
 }
 
-if(isset($_SESSION[$datiProfilo]))
-{	
-	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario')
-	{
+if(isset($_SESSION[$datiProfilo])){	
+	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario'){
 		header("location: /index.php");
 		die();
 	}
 	mostra();
 }
-else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{
+else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	$dataNascita = "DATE_FORMAT(DataNascita, '%d/%m/%Y')";
 	$sql3 = "SELECT Id, Nome, Cognome, $dataNascita AS 'Data di nascita', Genere, Tipo, Random, Username FROM Users 
 			WHERE Random = '".$_COOKIE[$randomValue]."' AND Attivo = 1";
 	
 	$result3 = mysqli_query($con,$sql3);
 	
-	if(mysqli_num_rows($result3) > 0)
-	{	
+	if(mysqli_num_rows($result3) > 0){	
 		$_SESSION[$datiProfilo] = mysqli_fetch_assoc($result3);
 	}
-	else 
-	{ 
+	else { 
 		setcookie($randomValue, 'Deleted', time()-(60*60*24*365));
 		header("location: /index.php");
 		die();
 	}
 	
-	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario')
-	{
+	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario'){
 		header("location: /index.php");
 		die();
 	}
 	mostra();
 }
-else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{
+else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	header("location: /login.php");
 	die();
 }
@@ -144,12 +132,10 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 						<table style='margin: 5px'>
 							<tr><td bgcolor='#f9f9f9' colspan='2' id='slide'><img style='height: 360px; width: 540px; background-size: cover; padding: 5px;' ";
 	   
-	if($res['Foto1'] === '')
-	{
+	if($res['Foto1'] === ''){
 		print "src = 'Immagini/white.png'>";
 	}
-	else
-	{
+	else{
 	   print "src='data:image;base64,".$res['Foto1']."'>";
 	}
 	print "					</td></tr>
@@ -164,8 +150,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 				<td colspan='2' class='menu' style='visibility: hidden' align='center'>
 					<div class='menu' style='display: none'>"; 					
 	
-	if(mysqli_num_rows($result2) > 0)
-	{
+	if(mysqli_num_rows($result2) > 0){
 		print "<input type='checkbox' id='Antipasto' onclick='filtro(".'"Antipasto"'.")' 
 				style='margin-top: 10px' checked>Antipasto
 				<input type='checkbox' id='Primo' onclick='filtro(".'"Primo"'.")' checked>Primo
@@ -180,8 +165,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 		$bgcolor1 = '#f9f9f9';
 		$bgcolor2 = '#e0e0e0';
 		
-		while($res2 = mysqli_fetch_array($result2))
-		{
+		while($res2 = mysqli_fetch_array($result2)){
 			print "<tr class='".$res2['Tipo']."'>
 					<td align='center' width='50px' bgcolor='$bgcolor1' style='padding: 5px'><input type='number' min='0' name='menu".$res2['Id']."' value='0'></td>
 																				
@@ -191,12 +175,10 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 					<td align='center' style='word-break: break-all' width='415px' bgcolor='$bgcolor1'>".$res2['Ingredienti']."</td>
 					<td align='center' bgcolor='$bgcolor2'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 
-			if($res2['Foto'] === '')
-			{
+			if($res2['Foto'] === ''){
 				print "src='Immagini/white.png'>";
 			}
-			else
-			{
+			else{
 				print "src='data:image;base64,".$res2['Foto']."'>";
 			}
 			$temp = $bgcolor1;
@@ -205,8 +187,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 		}
 		print "</td></tr></table>";
 	}
-	else
-	{
+	else{
 		print "<p>Menù non disponibile</p>";
 	}
 	print "</div></td></tr>";
@@ -221,14 +202,11 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 						<select title='Seleziona il giorno' style="margin-right: 15px" name='giorno'>
 							<option>Giorno</option>
 							<?php
-							for ($giorno=1; $giorno<=31; $giorno++)
-							{
-								if(strlen((string)$giorno) == 1)
-								{
+							for ($giorno=1; $giorno<=31; $giorno++){
+								if(strlen((string)$giorno) == 1){
 									print "<option>0$giorno</option>";
 								}
-								else
-								{
+								else{
 									print "<option>$giorno</option>";
 								}
 							}
@@ -243,8 +221,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 						<select title="Seleziona l'anno" name='anno'>
 							<option>Anno</option>
 							<?php
-							for ($anno=date("Y"); $anno<=date("Y")+2; $anno++)
-							{
+							for ($anno=date("Y"); $anno<=date("Y")+2; $anno++){
 								print "<option>$anno</option>";
 							}							
 							print '</select></td>
@@ -252,14 +229,11 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 										<select title="Seleziona l'."'".'ora" style="margin-right: 15px" name="ora">
 											<option>Ora</option>';
 							
-							for ($ora=0; $ora<=23; $ora++)
-							{
-								if(strlen((string)$ora) == 1)
-								{
+							for ($ora=0; $ora<=23; $ora++){
+								if(strlen((string)$ora) == 1){
 									print "<option>0$ora</option>";
 								}
-								else
-								{
+								else{
 									print "<option>$ora</option>";
 								}								
 							}							
@@ -267,14 +241,11 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 									<select title='Seleziona il minuto' name='minuto'>
 										<option>Minuto</option>";
 							
-							for ($minuto=0; $minuto<=59; $minuto++)
-							{
-								if(strlen((string)$minuto) == 1)
-								{
+							for ($minuto=0; $minuto<=59; $minuto++){
+								if(strlen((string)$minuto) == 1){
 									print "<option>0$minuto</option>";
 								}
-								else
-								{
+								else{
 									print "<option>$minuto</option>";
 								}								
 							}
@@ -283,8 +254,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 									<select name='persone'>
 										<option>Persone</option>";
 							
-							for ($persone=1; $persone<=10; $persone++)
-							{
+							for ($persone=1; $persone<=10; $persone++){
 								print "<option>$persone</option>";
 							}
 							?>

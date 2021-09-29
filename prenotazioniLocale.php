@@ -7,40 +7,33 @@ $data = "DATE_FORMAT(Data, '%d/%m/%Y')";
 
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 
-if(isset($_SESSION[$datiProfilo]))
-{
-	if($_SESSION[$datiProfilo]['Tipo'] === 'Cliente')
-	{
+if(isset($_SESSION[$datiProfilo])){
+	if($_SESSION[$datiProfilo]['Tipo'] === 'Cliente'){
 		header("location: /index.php");
 		die();
 	}	
-	else if(isset($_GET['Id']))
-	{
+	else if(isset($_GET['Id'])){
 		$Id = $_GET['Id'];
 		
 		$sql2 = "SELECT UserId, Nome FROM Locali WHERE Id = $Id AND Attivo = '1'";
 		$result2 = mysqli_query($con,$sql2);
 		$res2 = mysqli_fetch_assoc($result2);
 		
-		if($res2['UserId'] == $_SESSION[$datiProfilo]['Id'])
-		{
+		if($res2['UserId'] == $_SESSION[$datiProfilo]['Id']){
 			$sql = "SELECT Id, $data AS Data, Ora, Persone, Stato FROM Prenotazioni WHERE LocaleId = $Id ORDER BY Data";		
 			$result = mysqli_query($con,$sql);
 		}
-		else
-		{
+		else{
 			header("location: /locali.php");
 			die();
 		}
 	}
-	else
-	{
+	else{
 		header("location: /locali.php");
 		die();
 	}
 }
-else
-{
+else{
 	header("location: /index.php");
 	die();
 }
@@ -85,10 +78,8 @@ else
 	</tr>
 	
 	<?php 
-	if(mysqli_num_rows($result) > 0)
-	{
-		while($res = mysqli_fetch_array($result))
-		{
+	if(mysqli_num_rows($result) > 0){
+		while($res = mysqli_fetch_array($result)){
 			print "</td><td align='center' style='padding: 5px'>".$res['Data']."</td>
 					<td align='center' style='padding: 5px'>".$res['Ora']."</td>
 					<td align='center' style='padding: 5px'>".$res['Persone']." Persone</td>
@@ -98,7 +89,9 @@ else
 					</td></tr>";
 		} 
 	}
-	else { print '<tr><td align="center" style="padding: 5px" colspan="5">Nessuna prenotazione ricevuta</td></tr>'; }
+	else { 
+		print '<tr><td align="center" style="padding: 5px" colspan="5">Nessuna prenotazione ricevuta</td></tr>'; 
+	}
 	?>
 </table>
 <br>

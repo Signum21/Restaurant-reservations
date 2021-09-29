@@ -3,8 +3,7 @@ session_start();
 $randomValue = 'r5f7ryVc3ye';
 $datiProfilo = 'dh7aP7fj4ho';
 
-if (isset($_SESSION[$datiProfilo]) || isset($_COOKIE[$randomValue]))
-{
+if (isset($_SESSION[$datiProfilo]) || isset($_COOKIE[$randomValue])){
 	header("location: /index.php");
 	die();
 }

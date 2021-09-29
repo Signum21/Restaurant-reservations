@@ -6,41 +6,34 @@ $datiProfilo = 'dh7aP7fj4ho';
 
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 
-if(isset($_SESSION[$datiProfilo]))
-{
-	if($_SESSION[$datiProfilo]['Tipo'] === 'Cliente')
-	{
+if(isset($_SESSION[$datiProfilo])){
+	if($_SESSION[$datiProfilo]['Tipo'] === 'Cliente'){
 		header("location: /index.php");
 		die();
 	}	
-	else if(isset($_GET['Id']))
-	{
+	else if(isset($_GET['Id'])){
 		$Id = $_GET['Id'];
 		
 		$sql2 = "SELECT UserId FROM Locali WHERE Id = $Id AND Attivo = '1'";
 		$result2 = mysqli_query($con,$sql2);
 		$res2 = mysqli_fetch_assoc($result2);
 		
-		if($res2['UserId'] == $_SESSION[$datiProfilo]['Id'])
-		{
+		if($res2['UserId'] == $_SESSION[$datiProfilo]['Id']){
 			$sql = "SELECT Nome,Numero,Citta,CAP,Indirizzo,NumeroCivico,Foto1,Foto2,Foto3,Foto4 FROM Locali WHERE Id = '$Id' AND Attivo = 1";
 			$result = mysqli_query($con,$sql);
 			$res = mysqli_fetch_assoc($result);
 		}
-		else
-		{
+		else{
 			header("location: /locali.php");
 			die();
 		}
 	}
-	else
-	{
+	else{
 		header("location: /locali.php");
 		die();
 	}
 }
-else
-{
+else{
 	header("location: /index.php");
 	die();
 }

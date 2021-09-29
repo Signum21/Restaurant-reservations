@@ -4,8 +4,7 @@ session_start();
 $randomValue = 'r5f7ryVc3ye';
 $datiProfilo = 'dh7aP7fj4ho';
 
-if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{		
+if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){		
 	$dataNascita = "DATE_FORMAT(DataNascita, '%d/%m/%Y')";	
 	$con = mysqli_connect('localhost','root','','sitoRistoranti','3306');	
 	$sql = "SELECT Id, Nome, Cognome, $dataNascita AS 'Data di nascita', Genere, Tipo, Random, Username FROM Users 
@@ -13,12 +12,10 @@ if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 	
 	$result = mysqli_query($con,$sql);	
 	
-	if(mysqli_num_rows($result) > 0)
-	{
+	if(mysqli_num_rows($result) > 0){
 		$_SESSION[$datiProfilo] = mysqli_fetch_assoc($result);
 	}
-	else 
-	{ 
+	else { 
 		setcookie($randomValue, 'Deleted', time()-(60*60*24*365));
 		header("location: /index.php");
 		die();
@@ -41,16 +38,14 @@ if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 <ul class="navigation-bar">
 	<li class="dropdown"><a href="index.php" tabindex='-1'>Homepage</a></li>
 	<?php
-	if(isset($_SESSION[$datiProfilo]) && $_SESSION[$datiProfilo]['Tipo'] === 'Cliente')
-	{
+	if(isset($_SESSION[$datiProfilo]) && $_SESSION[$datiProfilo]['Tipo'] === 'Cliente'){
  		print "<li class='dropdown'><a href='ricercaLocali.php' tabindex='-1'>Ricerca locali</a></li>";
 	}
 	?>
   	<li class="dropdown"><a>Area riservata</a>
   		<div class="dropdown-content">
         <?php
-		if(!isset($_SESSION[$datiProfilo]))
-		{
+		if(!isset($_SESSION[$datiProfilo])){
 			print "<ul id='ulReg'>
 						<li class='side'><a href='login.php' tabindex='-1'>Entra</a></li>\n
 						<li class='side'><a>Registrati</a>
@@ -61,15 +56,15 @@ if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 						</li>
 					</ul>\n";
 		}
-		else 
-		{ 
+		else { 
 			print "<a href='profilo.php' tabindex='-1'>Profilo</a>\n";
 			
-			if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario')
-			{
+			if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario'){
 				print "<a href='locali.php' tabindex='-1'>Locali</a>\n"; 
 			}
-			else { print "<a href='elencoPrenotazioni.php' tabindex='-1'>Prenotazioni</a>"; }
+			else { 
+				print "<a href='elencoPrenotazioni.php' tabindex='-1'>Prenotazioni</a>"; 
+			}
 			print "<a href='logout.php' tabindex='-1'>Esci</a>\n"; 
 		}
 		?>
@@ -80,31 +75,28 @@ if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr><td colspan="2" align="center" style='padding: 10px'><h1>
 		<?php
-		if (isset($_SESSION[$datiProfilo]))
-		{
+		if (isset($_SESSION[$datiProfilo])){
 			print " Benvenuto ".$_SESSION[$datiProfilo]['Username']."! ";
 		}
-		else { print " Benvenuto nel mio sito! "; }
+		else { 
+			print " Benvenuto nel mio sito! "; 
+		}
 		?>
 	</h1></td></tr>
 	<tr><td align="center"><h3>
 		<?php
-		if (isset($_SESSION[$datiProfilo]))
-		{
+		if (isset($_SESSION[$datiProfilo])){
 			print "<a href='profilo.php' style='padding: 10px'><font color='1E42C1'>Profilo </font><img src='Immagini/profilo.png'></a></h3></td>\n";
 			
-			if($_SESSION[$datiProfilo]['Tipo']==='Proprietario')
-			{
+			if($_SESSION[$datiProfilo]['Tipo']==='Proprietario'){
 				print "<td align='center'><h3><a href='locali.php' style='padding: 10px'><font color='1E42C1'>Locali </font><img src='Immagini/posatePiccole.png'></a></h3></tr>";
 			}
-			else
-			{
+			else{
 				print "<td align='center'><h3><a href='ricercaLocali.php' style='padding: 10px'><font color='1E42C1'>Cerca locali </font><img src='Immagini/lente.png'></a></h3></tr>";
 			}
 			print "<tr><td align='center' colspan='2'><h3><a href='logout.php' style='padding: 10px'><font color='1E42C1'>Esci </font><img src='Immagini/logout.png'></a></h3>\n";
 		}
-		else
-		{
+		else{
 			print "<a href='login.php' style='padding: 27px'><font color='1E42C1'>Entra </font><img src='Immagini/login.png'></a></h3></td>\n";
 			print "<td align='center'>
 						<ul id='ulReg'>

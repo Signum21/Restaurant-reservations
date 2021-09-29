@@ -25,8 +25,7 @@ $password = password_hash($passwordClear, PASSWORD_BCRYPT);
 
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 
-do
-{
+do{
 	$random = rand(1,999999999);
 	$sql2 = "SELECT Nome FROM Users WHERE Random = '$random'";
 	$result = mysqli_query($con,$sql2);
@@ -37,13 +36,11 @@ $sql = "INSERT INTO Users (Nome,Cognome,DataNascita,Genere,Tipo,Random,Username,
 		VALUES ('$nome','$cognome','$dataNascita','$genere','$tipo','$random','$username','$password',1)";
 $successo;
 
-if(mysqli_query($con,$sql))
-{
+if(mysqli_query($con,$sql)){
 	header("refresh:2; url=login.php");
 	$successo = true;
 }
-else
-{ 
+else{ 
 	header("refresh:2; url=registrazione.php?tipo=$tipo"); 
 	$successo = false;
 }
@@ -79,14 +76,12 @@ else
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 <tr><td align="center" style='padding: 10px'>
 <?php
-if($successo == true)
-{
+if($successo == true){
 	print "<h1><img src='Immagini/ok.png'> Registrazione avvenuta con successo.</h1>\n";
 	print "Verrai ora reindirizzato alla pagina di login...<br/>\n"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='login.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>\n";	
 }
-else
-{
+else{
 	print "<h1><img src='Immagini/error.png'> Registrazione fallita.</h1>\n";
 	print "Verrai ora reindirizzato alla pagina di registrazione...<br/>\n"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='registrazione.php?tipo=$tipo' tabindex='-1'><font color='1E42C1'>QUI</font></a>\n";

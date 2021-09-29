@@ -9,65 +9,53 @@ $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 if(isset($_SESSION[$datiProfilo]) && isset($_GET['nome']) && isset($_GET['id']) && isset($_POST['giorno']) && isset($_POST['mese']) && isset($_POST['anno'])
   	 && isset($_POST['ora']) && isset($_POST['minuto']) && isset($_POST['persone']))
 {	
-	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario')
-	{
+	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario'){
 		header("location: /index.php");
 		die();
 	}
 	$queryString = '';
 
-	foreach($_POST as $key => $value)
-	{
-		if(substr($key,0,4) != 'menu')
-		{
+	foreach($_POST as $key => $value){
+		if(substr($key,0,4) != 'menu'){
 			break;
 		}
 
-		if($value > 0)
-		{
+		if($value > 0){
 			$queryString = $queryString.' Id = '.substr($key, 4, strlen($key)-4).' || ';
 		}
 	}
 	$sql = "SELECT Id, Nome, Prezzo FROM Menu WHERE".substr($queryString, 0, strlen($queryString)-4);
-
 	$result = mysqli_query($con,$sql);
 
-	if(mysqli_num_rows($result) <= 0)
-	{
+	if(mysqli_num_rows($result) <= 0){
 		header("location: /ricercaLocali.php");
 		die();
 	}
 }
-else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{
+else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	$sql2 = "SELECT Tipo FROM Users WHERE Random = '".$_COOKIE[$randomValue]."' AND Attivo = '1'";
 	$result2 = mysqli_query($con,$sql2);
 	
-	if(mysqli_num_rows($result2) > 0)
-	{	
+	if(mysqli_num_rows($result2) > 0){	
 		$res2 = mysqli_fetch_assoc($result2);
 	}
-	else 
-	{ 
+	else { 
 		setcookie($randomValue, 'Deleted', time()-(60*60*24*365));
 		header("location: /index.php");
 		die();
 	}
 	
-	if($res2['Tipo'] === 'Proprietario' || !isset($_GET['id']))
-	{
+	if($res2['Tipo'] === 'Proprietario' || !isset($_GET['id'])){
 		header("location: /index.php");
 		die();
 	}
-	else if(isset($_GET['id']))
-	{
+	else if(isset($_GET['id'])){
 		$id = $_GET['id'];		
 		header("location: /visualizzaLocale.php?Id=$id");
 		die();
 	}
 }
-else
-{
+else{
 	header("location: /login.php");
 	die();
 }

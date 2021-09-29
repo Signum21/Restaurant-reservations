@@ -6,35 +6,29 @@ $datiProfilo = 'dh7aP7fj4ho';
 
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 
-if(isset($_SESSION[$datiProfilo]) && $_SESSION[$datiProfilo]['Tipo'] === 'Cliente')
-{
+if(isset($_SESSION[$datiProfilo]) && $_SESSION[$datiProfilo]['Tipo'] === 'Cliente'){
 	header("location: /index.php");
 	die();
 }
-else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{
+else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	$sql = "SELECT Tipo FROM Users WHERE Random = '".$_COOKIE[$randomValue]."' AND Attivo = '1'";
 	$result = mysqli_query($con,$sql);
 	
-	if(mysqli_num_rows($result) > 0)
-	{
+	if(mysqli_num_rows($result) > 0){
 		$res = mysqli_fetch_assoc($result);
 	}
-	else 
-	{ 
+	else { 
 		setcookie($randomValue, 'Deleted', time()-(60*60*24*365));
 		header("location: /index.php");
 		die();
 	}
 	
-	if($res['Tipo'] === 'Cliente')
-	{
+	if($res['Tipo'] === 'Cliente'){
 		header("location: /index.php");
 		die();
 	}
 }
-else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{
+else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	header("location: /login.php");
 	die();
 }

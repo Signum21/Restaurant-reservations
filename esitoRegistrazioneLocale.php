@@ -22,29 +22,25 @@ $foto2 = '';
 $foto3 = '';
 $foto4 = '';
 
-if($_FILES['foto1']['tmp_name'] != '')
-{
+if($_FILES['foto1']['tmp_name'] != ''){
 	$foto1 = addslashes($_FILES['foto1']['tmp_name']);
 	$foto1 = file_get_contents($foto1);
 	$foto1 = base64_encode($foto1);
 }
 
-if($_FILES['foto2']['tmp_name'] != '')
-{
+if($_FILES['foto2']['tmp_name'] != ''){
 	$foto2 = addslashes($_FILES['foto2']['tmp_name']);
 	$foto2 = file_get_contents($foto2);
 	$foto2 = base64_encode($foto2);
 }
 
-if($_FILES['foto3']['tmp_name'] != '')
-{
+if($_FILES['foto3']['tmp_name'] != ''){
 	$foto3 = addslashes($_FILES['foto3']['tmp_name']);
 	$foto3 = file_get_contents($foto3);
 	$foto3 = base64_encode($foto3);
 }
 
-if($_FILES['foto4']['tmp_name'] != '')
-{
+if($_FILES['foto4']['tmp_name'] != ''){
 	$foto4 = addslashes($_FILES['foto4']['tmp_name']);
 	$foto4 = file_get_contents($foto4);
 	$foto4 = base64_encode($foto4);
@@ -56,13 +52,11 @@ $sql= "INSERT INTO Locali (UserId,Nome,Numero,Citta,CAP,Indirizzo,NumeroCivico,F
 		VALUES ('$UserId','$nome','$numero','$citta','$cap','$indirizzo','$civico','$foto1','$foto2','$foto3','$foto4',1)";
 $successo;
 
-if(mysqli_query($con,$sql))
-{
+if(mysqli_query($con,$sql)){
 	header("refresh:2; url=locali.php");
 	$successo = true;
 }
-else
-{ 
+else{ 
 	header("refresh:2; url=registrazioneLocale.php"); 
 	$successo = false;
 }
@@ -92,14 +86,12 @@ else
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 <tr><td align="center" style='padding: 10px'>
 <?php
-if($successo == true)
-{
+if($successo == true){
 	print "<h1><img src='Immagini/ok.png'> Registrazione locale avvenuta con successo.</h1>";
 	print "Verrai ora reindirizzato alla pagina di riepilogo dei locali...<br/>"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='locali.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>";	
 }
-else
-{
+else{
 	print "<h1><img src='Immagini/error.png'> Registrazione locale fallita.</h1>";
 	print "Verrai ora reindirizzato alla pagina di registrazione del locale...<br/>"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='registrazioneLocale.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>";

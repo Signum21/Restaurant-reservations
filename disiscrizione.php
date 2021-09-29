@@ -4,8 +4,7 @@ session_start();
 $randomValue = 'r5f7ryVc3ye';
 $datiProfilo = 'dh7aP7fj4ho';
 
-if (!isset($_GET['dis']) || $_GET['dis'] !== $_SESSION[$datiProfilo]['Random'])
-{
+if (!isset($_GET['dis']) || $_GET['dis'] !== $_SESSION[$datiProfilo]['Random']){
 	header("location: /index.php");
 	die();
 }
@@ -14,15 +13,12 @@ $random = $_GET['dis'];
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 $sql = "UPDATE Users SET Attivo = 0 WHERE Random = '$random'"; 
 
-if(mysqli_query($con,$sql))
-{
-	if($_SESSION[$datiProfilo]['Tipo'] == 'Proprietario')
-	{
+if(mysqli_query($con,$sql)){
+	if($_SESSION[$datiProfilo]['Tipo'] == 'Proprietario'){
 		$sql4 = "SELECT Id FROM Locali WHERE UserId = ".$_SESSION[$datiProfilo]['Id'];
 		$result = mysqli_query($con,$sql4);
 		
-		while($res = mysqli_fetch_assoc($result))
-		{
+		while($res = mysqli_fetch_assoc($result)){
 			$sql2 = "UPDATE Locali SET Attivo = 0 WHERE Id = ".$res['Id'];
 			$sql3 = "UPDATE Menu SET Attivo = 0 WHERE LocaleId = ".$res['Id'];
 
@@ -34,8 +30,9 @@ if(mysqli_query($con,$sql))
 	session_destroy();
 	setcookie($randomValue, 'deleted', time()-(60*60*24*365));
 }
-else { $successo = false; }
-
+else { 
+	$successo = false; 
+}
 header("refresh:2; url=index.php");
 ?>
 <!doctype html>
@@ -69,14 +66,12 @@ header("refresh:2; url=index.php");
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 <tr><td align="center" style='padding: 10px'>
 <?php
-if($successo == true)
-{
+if($successo == true){
 	print "<h1><img src='Immagini/ok.png'> Disiscrizione avvenuta con successo.</h1>\n";
 	print "Verrai ora reindirizzato alla homepage...<br/>\n"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='index.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>\n";	
 }
-else
-{
+else{
 	print "<h1><img src='Immagini/error.png'> Disiscrizione fallita.</h1>\n";
 	print "Verrai ora reindirizzato alla homepage...<br/>\n"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='index.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>\n";

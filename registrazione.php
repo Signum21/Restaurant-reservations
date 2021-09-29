@@ -5,8 +5,7 @@ $datiProfilo = 'dh7aP7fj4ho';
 
 isset($_SESSION[$datiProfilo]) || isset($_COOKIE[$randomValue]) ? header("location: /index.php") : false;
 
-if($_GET['tipo'] != 'Cliente' && $_GET['tipo'] != 'Proprietario')
-{
+if($_GET['tipo'] != 'Cliente' && $_GET['tipo'] != 'Proprietario'){
 	header("location: /index.php");
 	die();
 }
@@ -55,14 +54,11 @@ if($_GET['tipo'] != 'Cliente' && $_GET['tipo'] != 'Proprietario')
         	<select title="Seleziona il giorno" name="giorno">
             	<option>Giorno</option>
             	<?php
-				for ($giorno=1; $giorno<=31; $giorno++)
-				{
-					if(strlen((string)$giorno) == 1)
-					{
+				for ($giorno=1; $giorno<=31; $giorno++){
+					if(strlen((string)$giorno) == 1){
 						print "<option>0$giorno</option>";
 					}
-					else
-					{
+					else{
 						print "<option>$giorno</option>";
 					}
 				}
@@ -77,8 +73,7 @@ if($_GET['tipo'] != 'Cliente' && $_GET['tipo'] != 'Proprietario')
             <select title="Seleziona l'anno" name="anno">
             	<option>Anno</option>
             	<?php
-				for ($anno=date("Y")-18; $anno>=date("Y")-118; $anno--)
-				{
+				for ($anno=date("Y")-18; $anno>=date("Y")-118; $anno--){
 					print "<option>$anno</option>";
 				}
 				?>

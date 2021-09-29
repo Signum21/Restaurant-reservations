@@ -6,23 +6,19 @@ $datiProfilo = 'dh7aP7fj4ho';
 $data = "DATE_FORMAT(Data, '%d/%m/%Y')";
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 
-if(isset($_SESSION[$datiProfilo]))
-{
-	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario')
-	{
+if(isset($_SESSION[$datiProfilo])){
+	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario'){
 		header("location: /index.php");
 		die();
 	}	
-	else if(isset($_GET['Id']))
-	{
+	else if(isset($_GET['Id'])){
 		$Id = $_GET['Id'];
 
 		$sql = "SELECT UserId, LocaleId, $data AS 'Data', Ora, Persone, Stato FROM Prenotazioni WHERE Id = $Id";
 		$result = mysqli_query($con,$sql);
 		$res = mysqli_fetch_assoc($result);
 
-		if($res['UserId'] == $_SESSION[$datiProfilo]['Id'])
-		{
+		if($res['UserId'] == $_SESSION[$datiProfilo]['Id']){
 			$idLocale = $res['LocaleId'];
 				
 			$sql2 = "SELECT Nome,Numero,Citta,CAP,Indirizzo,NumeroCivico,Foto1,Foto2,Foto3,Foto4 FROM Locali WHERE Id = '$idLocale'";
@@ -35,8 +31,7 @@ if(isset($_SESSION[$datiProfilo]))
 			$arrayCounter = 0;
 			$stringaPiatti = '';
 			
-			while($res3 = mysqli_fetch_assoc($result3))
-			{
+			while($res3 = mysqli_fetch_assoc($result3)){
 				$stringaPiatti = $stringaPiatti." Id = ".$res3['MenuId']." ||";
 				
 				$arrayQuantita[$arrayCounter] = $res3['Quantita'];
@@ -53,26 +48,22 @@ if(isset($_SESSION[$datiProfilo]))
 			$prezzo = 0;
 			$arrayCounter = 0;
 			
-			while($res5 = mysqli_fetch_assoc($result5))
-			{
+			while($res5 = mysqli_fetch_assoc($result5)){
 				$prezzo = $prezzo + $res5['Prezzo']*$arrayQuantita[$arrayCounter];
 				$arrayCounter++;
 			}
 		}
-		else
-		{
+		else{
 			header("location: /elencoPrenotazioni.php");
 			die();
 		}
 	}
-	else
-	{
+	else{
 		header("location: /elencoPrenotazioni.php");
 		die();
 	}
 }
-else
-{
+else{
 	header("location: /index.php");
 	die();
 }
@@ -171,8 +162,7 @@ print "<h1>".$res2['Nome']."</h1></td></tr>
 	$bgcolor2 = '#e0e0e0';
 	$arrayCounter = 0;
 			
-	while($res4 = mysqli_fetch_assoc($result4))
-	{
+	while($res4 = mysqli_fetch_assoc($result4)){
 		print "<tr class='".$res4['Tipo']."'>
 				<td align='center' width='50px' bgcolor='$bgcolor1' style='padding: 5px'>".$arrayQuantita[$arrayCounter]."</td>
 																			
@@ -182,12 +172,10 @@ print "<h1>".$res2['Nome']."</h1></td></tr>
 				<td align='center' style='word-break: break-all' width='415px' bgcolor='$bgcolor1'>".$res4['Ingredienti']."</td>
 				<td align='center' bgcolor='$bgcolor2'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 
-		if($res4['Foto'] === '')
-		{
+		if($res4['Foto'] === ''){
 			print "src='Immagini/white.png'>";
 		}
-		else
-		{
+		else{
 			print "src='data:image;base64,".$res4['Foto']."'>";
 		}
 		$temp = $bgcolor1;

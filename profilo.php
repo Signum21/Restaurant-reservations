@@ -6,41 +6,33 @@ $dataNascita = "DATE_FORMAT(DataNascita, '%d/%m/%Y')";
 $randomValue = 'r5f7ryVc3ye';
 $datiProfilo = 'dh7aP7fj4ho';
 
-if (!isset($_SESSION[$datiProfilo]) && !isset($_COOKIE[$randomValue]) && isset($_POST['username']))
-{
+if (!isset($_SESSION[$datiProfilo]) && !isset($_COOKIE[$randomValue]) && isset($_POST['username'])){
 	$username = $_POST['username'];
 }
 
-if (!isset($username) && !isset($_SESSION[$datiProfilo]) && !isset($_COOKIE[$randomValue]))
-{
+if (!isset($username) && !isset($_SESSION[$datiProfilo]) && !isset($_COOKIE[$randomValue])){
 	header("location: /login.php");
 	die();
 }
-else if(isset($username))
-{
+else if(isset($username)){
 	$sql5 = "SELECT Password FROM Users WHERE Username = '$username' AND Attivo ='1'";
 	$result5 = mysqli_query($con,$sql5);
 	
-	if(mysqli_num_rows($result5) > 0)
-	{
+	if(mysqli_num_rows($result5) > 0){
 		$res5 = mysqli_fetch_assoc($result5);
 		
-		if(!password_verify($_POST['password'], $res5['Password']))
-		{
+		if(!password_verify($_POST['password'], $res5['Password'])){
 			header("location: /login.php");
 			die();
 		}
 	}
-	else 
-	{ 
+	else { 
 		header("location: /login.php"); 
 		die();
 	}
 	
-	if(isset($_POST['ricordami']))
-	{
-		do
-		{
+	if(isset($_POST['ricordami'])){
+		do{
 			$random = rand(1,999999999);
 			$sql4 = "SELECT Nome FROM Users WHERE Random = '$random'";
 			$result3 = mysqli_query($con,$sql4);
@@ -49,8 +41,7 @@ else if(isset($username))
 		
 		$sql3 = "UPDATE Users SET Random = '$random' WHERE Username = '$username'";
 		
-		if(mysqli_query($con,$sql3))
-		{
+		if(mysqli_query($con,$sql3)){
 			setcookie($randomValue, $random, time()+(60*60*24*365));
 		}
 	}
@@ -59,30 +50,25 @@ else if(isset($username))
 	
 	$result = mysqli_query($con,$sql);
 	
-	if(mysqli_num_rows($result) > 0)
-	{
+	if(mysqli_num_rows($result) > 0){
 		$array = mysqli_fetch_assoc($result);
 		$_SESSION[$datiProfilo] = $array;
 	}
-	else 
-	{ 
+	else { 
 		header("location: /index.php"); 
 		die();
 	}
 }
-else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{	
+else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){	
 	$sql2 = "SELECT Id, Nome, Cognome, $dataNascita AS 'Data di nascita', Genere, Tipo, Random, Username FROM Users 
 			WHERE Random = '".$_COOKIE[$randomValue]."' AND Attivo ='1'";
 	
 	$result2 = mysqli_query($con,$sql2);
 	
-	if(mysqli_num_rows($result2) > 0)
-	{
+	if(mysqli_num_rows($result2) > 0){
 		$_SESSION[$datiProfilo] = mysqli_fetch_assoc($result2);
 	}
-	else 
-	{ 
+	else { 
 		setcookie($randomValue, 'Deleted', time()-(60*60*24*365));
 		header("location: /index.php");
 		die();
@@ -129,10 +115,8 @@ else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 <?php
 print "<h1><img src='Immagini/profilo.png'> Profilo ".$_SESSION[$datiProfilo]['Username']." <img src='Immagini/profilo.png'></h1></td></tr>\n";
 
-foreach ($_SESSION[$datiProfilo] as $key => $value) 
-{ 
-	if($key != 'Username' && $key != "Random" && $key != "Tipo" && $key != "Id")
-	{
+foreach ($_SESSION[$datiProfilo] as $key => $value) { 
+	if($key != 'Username' && $key != "Random" && $key != "Tipo" && $key != "Id"){
     	print "<tr><td style='padding: 5px'>$key:</td><td align='center' style='padding: 5px'>$value</td>\n</tr>\n";
 	}
 }

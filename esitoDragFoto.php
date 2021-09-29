@@ -1,6 +1,5 @@
 <?php
-if(isset($_FILES['file']['name'][0]))
-{
+if(isset($_FILES['file']['name'][0])){
 	$allowed =  array('gif','png','jpg','jpeg','tif');
 	$filename = $_FILES['file']['name'][0];
 	$ext = pathinfo($filename, PATHINFO_EXTENSION);
@@ -10,18 +9,17 @@ if(isset($_FILES['file']['name'][0]))
 	$foto = base64_encode($foto);
 	
 		
-	foreach($_FILES['file']['name'] as $keys => $values)
-	{
-		if(in_array($ext,$allowed))
-		{			
+	foreach($_FILES['file']['name'] as $keys => $values){
+		if(in_array($ext,$allowed)){			
 			$output = $foto;
 		}
-		else { $output = 'errorType'; }
+		else { 
+			$output = 'errorType'; 
+		}
 	}
 	echo $output;
 }
-else
-{
+else{
 	header("location: /index.php");
 	die();
 }

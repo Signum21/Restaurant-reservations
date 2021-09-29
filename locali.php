@@ -6,48 +6,39 @@ $datiProfilo = 'dh7aP7fj4ho';
 
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
 
-if(isset($_SESSION[$datiProfilo]))
-{
-	if($_SESSION[$datiProfilo]['Tipo'] === 'Cliente')
-	{
+if(isset($_SESSION[$datiProfilo])){
+	if($_SESSION[$datiProfilo]['Tipo'] === 'Cliente'){
 		header("location: /index.php");
 		die();
 	}	
-	else
-	{
+	else{
 		$sql4 = "SELECT Nome, Id, Foto1 FROM Locali WHERE UserId = '".$_SESSION[$datiProfilo]['Id']."' AND Attivo = '1'";
 		$result3 = mysqli_query($con,$sql4);
 	}
 }
-else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{
+else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	$sql = "SELECT Id, Tipo FROM Users WHERE Random = '".$_COOKIE[$randomValue]."' AND Attivo = '1'";
 	$result = mysqli_query($con,$sql);
 	
-	if(mysqli_num_rows($result) > 0)
-	{	
+	if(mysqli_num_rows($result) > 0){	
 		$res = mysqli_fetch_assoc($result);
 	}
-	else 
-	{ 
+	else { 
 		setcookie($randomValue, 'Deleted', time()-(60*60*24*365));
 		header("location: /index.php"); 
 		die();
 	}
 	
-	if($res['Tipo'] === 'Cliente')
-	{
+	if($res['Tipo'] === 'Cliente'){
 		header("location: /index.php");
 		die();
 	}
-	else
-	{
+	else{
 		$sql3 = "SELECT Nome, Id, Foto1 FROM Locali WHERE UserId = '".$res['Id']."' AND Attivo = '1'";
 		$result3 = mysqli_query($con,$sql3);
 	}	
 }
-else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
-{
+else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	header("location: /login.php");
 	die();
 }
@@ -88,16 +79,13 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo]))
 		</td>
 	</tr>
 	<?php 
-	while($res3 = mysqli_fetch_array($result3))
-	{
+	while($res3 = mysqli_fetch_array($result3)){
 		print "<tr id='".$res3['Id']."'><td align='center'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 		
-		if($res3['Foto1'] === '')
-		{
+		if($res3['Foto1'] === ''){
 			print "src='Immagini/white.png'>";
 		}
-		else
-		{
+		else{
 			print "src='data:image;base64,".$res3['Foto1']."'>";
 		}
 		print "</td><td align='center' style='padding: 5px'>".$res3['Nome']."</td><td align='center'>";
