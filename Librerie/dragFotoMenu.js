@@ -2,58 +2,46 @@ var cambio = false;
 var valPrima;
 var click = false;
 
-$(document).ready(function()
-{
-	"use strict";
-	var fileListEmpty = document.getElementById('lab1').files;
+$(document).ready(function(){
+	let fileListEmpty = document.getElementById('lab1').files;
 	
-	var dropzone = document.getElementById('dropzone1');
-	var lab = document.getElementById('lab1');
-	var sign = document.getElementById('sign1');
+	let dropzone = document.getElementById('dropzone1');
+	let lab = document.getElementById('lab1');
+	let xSign = document.getElementById('sign1');
 	
-	dropzone.ondragover = function()
-	{
-		event.dataTransfer.dropEffect = 'copy';
+	dropzone.ondragover = function(){
+		DataTransfer.dropEffect = 'copy';
 		
-		if(this.className !== 'dropzone full')
-		{
+		if(this.className !== 'dropzone full'){
 			this.className = 'dropzone dragover';
 		}
 		return false;
 	};
 
-	dropzone.ondragleave = function()
-	{
-		if(this.className !== 'dropzone full')
-		{
+	dropzone.ondragleave = function(){
+		if(this.className !== 'dropzone full'){
 			this.className = 'dropzone';
 		}
 		return false;
 	};
 
-	dropzone.ondrop = function(e)
-	{
+	dropzone.ondrop = function(e){
 		e.preventDefault();
 		
-		this.className = 'dropzone';
-		
-		var fotoDrag = e.dataTransfer.files;			
+		this.className = 'dropzone';		
+		let fotoDrag = e.dataTransfer.files;			
 		mostraDrag(fotoDrag);
 	};
 		
-	lab.onchange = function()
-	{
-		if(cambio === false)
-		{
+	lab.onchange = function(){
+		if(cambio === false){
 			$('#dropzone1').attr('class','dropzone');
-			var valore;
+			let valore;
 			
-			if(this.files.length === fileListEmpty.length)
-			{
+			if(this.files.length === fileListEmpty.length){
 				valore = valPrima;
 			}
-			else
-			{
+			else{
 				valore = this.files;
 				cambio = true;
 				this.files = fileListEmpty;
@@ -63,21 +51,17 @@ $(document).ready(function()
 		}		
 	};
 	
-	lab.onclick = function(e)
-	{
-		if(click === true)
-		{
+	lab.onclick = function(e){
+		if(click === true){
 			e.preventDefault();
 			click = false;
 		}
-		else
-		{				
+		else{				
 			valPrima = this.files;
 		}
 	};
 	
-	sign.onclick = function()
-	{
+	xSign.onclick = function(){
 		click = true;		
 		
 		$('#sign1').css('display','none');
@@ -88,35 +72,33 @@ $(document).ready(function()
 		cambio = false;
 	};
 	
-	sign.onmouseover = function()
-	{
+	xSign.onmouseover = function(){
 		this.style.border = '2px solid grey';
 	};
 	
-	sign.onmouseleave = function()
-	{
+	xSign.onmouseleave = function(){
 		this.style.border = '0px solid grey';
 	};
 });
 
-function mostraDrag(foto)
-{
-	"use strict";
-	var formData = new FormData();
+function mostraDrag(foto){
+	let formData = new FormData();
 	formData.append('file[]', foto[0]);
 	
-	$.ajax
-	({
+	$.ajax({
 		url: 'esitoDragFoto.php', method: 'POST', data: formData, processData: false, contentType: false, cache: false, success:
 		
-		function(response)
-		{
-			if(response === 'errorType')
-			{
+		function(response){
+			let inputDrag = document.getElementById('lab1');
+
+			if(response === 'errorType'){
 				$('#redFoto').css('background-color','red');
+
+				if(inputDrag.files.length > 0){
+					$('#dropzone1').attr('class','dropzone full');
+				}
 			}
-			else
-			{				
+			else{				
 				$('#dropzone1').css('background-image','url(data:image;base64,'+response+')');
 				$('#dropzone1').attr('class','dropzone full');
 				
@@ -125,7 +107,6 @@ function mostraDrag(foto)
 				$('#redFoto').css('background-color','white');
 				
 				cambio = true;
-				var inputDrag = document.getElementById('lab1');
 				inputDrag.files = foto;
 				cambio = false;						
 			}
