@@ -1,62 +1,58 @@
 var conta = 1000;
 
-function aggiungiMenu(Id)
-{
-	"use strict";
-	var Tipo = $('#tipo').val();
-	var Nome = $('#nomePiatto').val();	
-	var Prezzo = $('#prezzo').val();
-	var Ingredienti = $('#ingredienti').val();	
-	var Foto = document.getElementById('lab1').files;
+function aggiungiMenu(Id){
+	let Tipo = $('#tipo').val();
+	let Nome = $('#nomePiatto').val();	
+	let Prezzo = $('#prezzo').val();
+	let Ingredienti = $('#ingredienti').val();	
+	let Foto = document.getElementById('lab1').files;
 	
-	var formData = new FormData();
-	formData.append('file[]', Foto[0]);
+	let formData = new FormData();
+	formData.append('file[]', Foto[0]);	
+	let counter = 0;
 	
-	var counter = 0;
-	
-	if(Tipo === 'Tipo')
-	{
+	if(Tipo === 'Tipo'){
 		$('#redTipo').css('background-color','red');
 		counter++;
 	}
-	else { $('#redTipo').css('background-color','white'); }
+	else { 
+		$('#redTipo').css('background-color','white'); 
+	}
 	
-	if(Nome.trim() === '')
-	{
+	if(Nome.trim() === ''){
 		$('#redNomePiatto').css('background-color','red');
 		counter++;
 	}
-	else { $('#redNomePiatto').css('background-color','white'); }
+	else { 
+		$('#redNomePiatto').css('background-color','white'); 
+	}
 	
-	if(Prezzo.trim() === '')
-	{
+	if(Prezzo.trim() === ''){
 		$('#redPrezzo').css('background-color','red');
 		counter++;
 	}
-	else { $('#redPrezzo').css('background-color','white'); }
+	else { 
+		$('#redPrezzo').css('background-color','white'); 
+	}
 	
-	if(Ingredienti.trim() === '')
-	{
+	if(Ingredienti.trim() === ''){
 		$('#redIngredienti').css('background-color','red');
 		counter++;
 	}
-	else { $(redIngredienti).css('background-color','white'); }
+	else { 
+		$(redIngredienti).css('background-color','white'); 
+	}
 	
-	if(counter <= 0)
-	{
-		$.ajax(
-		{ 
+	if(counter <= 0){
+		$.ajax({ 
 			type: "POST", url: 'Menu_Locale.php?Tipo='+Tipo+'&Nome='+Nome+'&Prezzo='+Prezzo+'&Ingredienti='+Ingredienti+'&LocaleId='+Id+'&Val='+'Aggiungi&counter='+conta, data: formData, 
 			processData: false, contentType: false, cache: false, success: 
 	
-			function(response)
-			{				
-				if(response !== '0')
-				{
+			function(response){				
+				if(response !== '0'){
 					$('#addMenu').append(response);
 					
-					if($('#'+conta).attr('src') === 'data:image;base64,')
-					{
+					if($('#'+conta).attr('src') === 'data:image;base64,'){
 						$('#'+conta).attr('src','Immagini/white.png');
 					}			
 					conta++;
@@ -78,21 +74,15 @@ function aggiungiMenu(Id)
 	}
 }
 
-function rimuovi(Id,Oggetto,Tabella)
-{	
-	"use strict";
-	var richiesta = window.confirm("Sicuro di voler rimuovere il "+Oggetto+"?");
+function rimuovi(Id,Oggetto,Tabella){
+	let richiesta = window.confirm("Sicuro di voler rimuovere il "+Oggetto+"?");
 	
-	if(richiesta === true)
-	{
-		$.ajax(
-		{ 
+	if(richiesta === true){
+		$.ajax({ 
 			type: "POST", url: 'Menu_Locale.php?Val=Rimuovi', data: 'Id='+Id+'&Tabella='+Tabella, success: 
 	
-			function(response)
-			{				
-				if(response === '1')
-				{
+			function(response){				
+				if(response === '1'){
 					$('#'+Id).remove();
 				}
 			}
