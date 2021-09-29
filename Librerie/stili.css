@@ -2,15 +2,13 @@
 
 a { text-decoration: none; }
 
-input:not([type=radio]):not([type=checkbox])
-{
+input:not([type=radio]):not([type=checkbox]){
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
 }
 
-button
-{
+button{
     background-color: #1350E9;
     color: white;
     width: 100%;
@@ -21,16 +19,14 @@ img { vertical-align:middle; }
 
 h1 img { vertical-align:top; }
 
-body 
-{ 
+body { 
 	background-image:url(../Immagini/sfondo.jpg);
 	background-size:cover;
 }
 
 .manina { cursor: pointer; }
 
-.nav
-{
+.nav{
 	background-color: #0F4CCB;
     color: white;    
     padding: 10px;
@@ -38,21 +34,17 @@ body
 	cursor: pointer;
 }
 
-
-.navButton
-{
+.navButton{
 	border: solid white;
 	border-width: 0 3px 3px 0;
 	display: inline-block;
 	padding: 3px;
 }
 
-.navButton.right
-{	
+.navButton.right{	
 	transform: rotate(-45deg);
 }
 
-.navButton.left
-{	
+.navButton.left{	
 	transform: rotate(135deg);
 }

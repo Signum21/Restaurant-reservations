@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
-.dropzone
-{
+.dropzone{
 	border: 2px dashed #ccc;
 	height: 60px;
 	width: 90px;
@@ -12,8 +11,7 @@
 	cursor: pointer;
 }
 
-.dropzone:before
-{
+.dropzone:before{
     border-left: 2px solid #ccc;
     height: 20px;
 	margin-top: 20px;
@@ -22,8 +20,7 @@
 	position: absolute;
 }
 
-.dropzone:after
-{	
+.dropzone:after{	
 	border-top: 2px solid #ccc;
 	width: 20px;
 	margin-left: 32.5px;
@@ -32,39 +29,32 @@
 	position: absolute;
 }
 
-.dropzone.dragover
-{
+.dropzone.dragover{
 	border: 2px dashed black;
 }
 
-.dropzone.dragover:before
-{
+.dropzone.dragover:before{
     border-left: 2px solid black;
 }
 
-.dropzone.dragover:after
-{
+.dropzone.dragover:after{
     border-top: 2px solid black;
 }
 
-.dropzone.full
-{
+.dropzone.full{
 	border: 2px solid black;
 }
 
-.dropzone.full:after
-{
+.dropzone.full:after{
 	border-top: 0px solid black;
 }
 
-.dropzone.full:before
-{
+.dropzone.full:before{
 	border-left: 0px solid black;
 }
 
 
-.inputfile
-{
+.inputfile{
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -74,8 +64,7 @@
 }
 
 
-.cross
-{
+.cross{
 	border-radius: 50%;
 	background: #ccc;
 	width: 20px;
@@ -83,8 +72,7 @@
 	display: none;
 }
 
-.cross:after
-{
+.cross:after{
 	border-left: 2px solid grey;
     height: 20px;
 	margin-left: 9px;
@@ -92,8 +80,8 @@
 	content: '';
 	position: absolute;
 }
-.cross:before
-{	
+
+.cross:before{	
 	border-top: 2px solid grey;
 	width: 20px;
 	margin-top: 8.8px;
