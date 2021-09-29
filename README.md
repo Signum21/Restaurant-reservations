@@ -5,6 +5,7 @@ This is a project I made in 2018 for the final exam in high school therefor it's
 This web application allows owners to put their restaurants online so that the clients can look through the menu, the prices and the photos of the dishes and make a reservations for a specific date
 <br/><br/>
 
+
 <h2>Instructions</h2>
 
 If you want to test it you'll need a local web server running on the port 80 and a DBMS (eg. MySQL)
@@ -17,3 +18,8 @@ Password: ""
 Import the file "Database setup.sql" which will create the database and all the tables you need to save the data<br/>
 Copy all the others repository files in the right web server directory (eg. htdocs for XAMPP)<br/>
 Open the browser, type "localhost" and it will lead you to the home page where you can create an account
+<br/><br/>
+
+
+<h2>Homepage</h2>
+<img width="960" alt="home" src="https://user-images.githubusercontent.com/22285224/135196031-b3817b7e-ffe3-4c7a-8252-86f063a508cd.png">
