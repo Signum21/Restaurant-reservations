@@ -51,7 +51,7 @@ else{
 <link rel="stylesheet" type="text/css" href="Librerie/header.css">
 <script src="Librerie/jquery-3.2.1.min.js"></script>
 <script src="Librerie/dragFotoMenu.js"></script>
-<script src="Librerie/menu_locale.js"></script>
+<script src="Librerie/menuLocale.js"></script>
 </head>
 
 <body style="overflow-x: hidden">

@@ -53,7 +53,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <link rel="stylesheet" type="text/css" href="Librerie/header.css">
 <link rel="stylesheet" type="text/css" href="Librerie/stileRegistrati.css">
 <script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/menu_locale.js"></script>
+<script src="Librerie/menuLocale.js"></script>
 </head>
 
 <body>
