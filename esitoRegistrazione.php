@@ -51,8 +51,8 @@ else{
 <meta charset="UTF-8">
 <title>Esito registrazione</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 </head>
 
 <body>

@@ -49,11 +49,11 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <meta charset="UTF-8">
 <title>Locali</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
-<link rel="stylesheet" type="text/css" href="Libraries/stileRegistrati.css">
-<script src="Libraries/jquery-3.2.1.min.js"></script>
-<script src="Libraries/menuLocale.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/stileRegistrati.css">
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/menuLocale.js"></script>
 </head>
 
 <body>

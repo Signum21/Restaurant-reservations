@@ -74,10 +74,10 @@ else{
 <meta charset="utf-8">
 <title>Dati prenotazione</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<script src="Libraries/jquery-3.2.1.min.js"></script>
-<script src="Libraries/viewLocale.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/viewLocale.js"></script>
 </head>
 
 <body>

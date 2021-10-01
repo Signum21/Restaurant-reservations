@@ -6,6 +6,8 @@ $datiProfilo = 'dh7aP7fj4ho';
 $data = "DATE_FORMAT(Prenotazioni.Data, '%d/%m/%Y')";	
 
 $con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
+$_sql = "SELECT Locali.Foto1, Locali.Nome, Prenotazioni.Id, $data AS Data, Prenotazioni.Stato FROM Prenotazioni INNER JOIN Locali
+		 ON Locali.Id = Prenotazioni.LocaleId WHERE Prenotazioni.UserId = ";
 
 if(isset($_SESSION[$datiProfilo])){
 	if($_SESSION[$datiProfilo]['Tipo'] === 'Proprietario'){
@@ -13,8 +15,7 @@ if(isset($_SESSION[$datiProfilo])){
 		die();
 	}
 	else{
-		$sql = "SELECT Locali.Foto1, Locali.Nome, Prenotazioni.Id, $data AS Data, Prenotazioni.Stato FROM Prenotazioni INNER JOIN Locali
-				ON Locali.Id = Prenotazioni.LocaleId WHERE Prenotazioni.UserId =".$_SESSION[$datiProfilo]['Id']." ORDER BY Data";
+		$sql = $_sql.$_SESSION[$datiProfilo]['Id']." ORDER BY Prenotazioni.Data";
 		
 		$result = mysqli_query($con,$sql);
 	}
@@ -37,9 +38,7 @@ else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 		die();
 	}
 	else{
-		$sql = "SELECT Locali.Foto1, Locali.Nome, Prenotazioni.Id, $data AS Data, Prenotazioni.Stato FROM Prenotazioni INNER JOIN Locali
-				ON Locali.Id = Prenotazioni.LocaleId WHERE Prenotazioni.UserId =".$_SESSION[$datiProfilo]['Id'];
-		
+		$sql = $_sql.$res2['Id']." ORDER BY Prenotazioni.Data";		
 		$result = mysqli_query($con,$sql);
 	}	
 }
@@ -54,8 +53,8 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <meta charset="utf-8">
 <title>Prenotazioni</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 </head>
 
 <body>

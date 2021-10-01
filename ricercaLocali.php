@@ -39,10 +39,10 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <meta charset="UTF-8">
 <title>Ricerca locali</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
-<script src="Libraries/jquery-3.2.1.min.js"></script>
-<script src="Libraries/cercaLocali.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/cercaLocali.js"></script>
 </head>
 
 <body>

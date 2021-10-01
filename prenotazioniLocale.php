@@ -20,7 +20,7 @@ if(isset($_SESSION[$datiProfilo])){
 		$res2 = mysqli_fetch_assoc($result2);
 		
 		if($res2['UserId'] == $_SESSION[$datiProfilo]['Id']){
-			$sql = "SELECT Id, $data AS Data, Ora, Persone, Stato FROM Prenotazioni WHERE LocaleId = $Id ORDER BY Data";		
+			$sql = "SELECT Id, $data AS Data, Ora, Persone, Stato FROM Prenotazioni WHERE LocaleId = $Id ORDER BY Prenotazioni.Data";		
 			$result = mysqli_query($con,$sql);
 		}
 		else{
@@ -44,11 +44,11 @@ else{
 <meta charset="utf-8">
 <title>Prenotazioni</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<link rel="stylesheet" type="text/css" href="Libraries/modal.css">
-<script src="Libraries/jquery-3.2.1.min.js"></script>
-<script src="Libraries/funzioni.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/modal.css">
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/funzioni.js"></script>
 </head>
 
 <body>

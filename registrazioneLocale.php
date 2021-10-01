@@ -39,13 +39,13 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <meta charset="UTF-8">
 <title>Registrazione locale</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<link rel="stylesheet" type="text/css" href="Libraries/stileDrag.css">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
-<script src="Libraries/jquery-3.2.1.min.js"></script>
-<script src="Libraries/funzioni.js"></script>
-<script src="Libraries/dragFoto.js"></script>
-<script src="Libraries/registrazioneCheck.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/stileDrag.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/funzioni.js"></script>
+<script src="Resources/js/dragFoto.js"></script>
+<script src="Resources/js/registrazioneCheck.js"></script>
 </head>
 
 <body style="overflow-x: hidden">

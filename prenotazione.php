@@ -66,13 +66,13 @@ else{
 <meta charset="utf-8">
 <title>Prenotazione</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
-<link rel="stylesheet" type="text/css" href="Libraries/modal.css">
-<script src="Libraries/jquery-3.2.1.min.js"></script>
-<script src="Libraries/viewLocale.js"></script>
-<script src="Libraries/funzioni.js"></script>
-<script src="Libraries/registrazioneCheck.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/modal.css">
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/viewLocale.js"></script>
+<script src="Resources/js/funzioni.js"></script>
+<script src="Resources/js/registrazioneCheck.js"></script>
 </head>
 
 <body>
@@ -155,7 +155,7 @@ else{
 	<tr>
 		<td colspan="2" align="center" class="pagamento" style='visibility: hidden'>
 			<div class="pagamento" style='display: none'>
-				<form method="post" name="pagamento" action="esitoPrenotazione.php" onReset="return ConfermaReset()" 
+				<form method="post" name="pagamento" onReset="return ConfermaReset()" 
 					  onSubmit="return controlloPagamento(<?php print $_SESSION[$datiProfilo]['Id'].','.$_GET['id'].",'".$menu."'"; ?>)">
 					
 				<table border=2 style="margin: 5px" bordercolor="1E42C1">

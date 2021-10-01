@@ -46,12 +46,12 @@ else{
 <meta charset="UTF-8">
 <title>Menù</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<link rel="stylesheet" type="text/css" href="Libraries/stileDrag.css">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
-<script src="Libraries/jquery-3.2.1.min.js"></script>
-<script src="Libraries/dragFotoMenu.js"></script>
-<script src="Libraries/menuLocale.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/stileDrag.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/dragFotoMenu.js"></script>
+<script src="Resources/js/menuLocale.js"></script>
 </head>
 
 <body style="overflow-x: hidden">

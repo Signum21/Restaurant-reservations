@@ -81,10 +81,10 @@ else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <meta charset="UTF-8">
 <title>Profilo</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<script src="Libraries/jquery-3.2.1.min.js"></script>
-<script src="Libraries/funzioni.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/funzioni.js"></script>
 </head>
 
 <body>

@@ -3,7 +3,10 @@ session_start();
 $randomValue = 'r5f7ryVc3ye';
 $datiProfilo = 'dh7aP7fj4ho';
 
-isset($_SESSION[$datiProfilo]) || isset($_COOKIE[$randomValue]) ? header("location: /index.php") : false;
+if(isset($_SESSION[$datiProfilo]) || isset($_COOKIE[$randomValue])){
+	header("location: /index.php");
+	die();
+}
 
 if($_GET['tipo'] != 'Cliente' && $_GET['tipo'] != 'Proprietario'){
 	header("location: /index.php");
@@ -16,11 +19,11 @@ if($_GET['tipo'] != 'Cliente' && $_GET['tipo'] != 'Proprietario'){
 <meta charset="UTF-8">
 <title>Registrazione</title>
 <link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
-<link rel="stylesheet" type="text/css" href="Libraries/header.css">
-<script src="Libraries/jquery-3.2.1.min.js"></script>
-<script src="Libraries/funzioni.js"></script>
-<script src="Libraries/registrazioneCheck.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/header.css">
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/funzioni.js"></script>
+<script src="Resources/js/registrazioneCheck.js"></script>
 </head>
 
 <body>
