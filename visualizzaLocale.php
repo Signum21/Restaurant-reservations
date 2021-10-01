@@ -73,13 +73,13 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title><?php print $res['Nome']; ?></title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/viewLocale.js"></script>
-<script src="Librerie/slideFoto.js"></script>
-<script src="Librerie/registrazioneCheck.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/viewLocale.js"></script>
+<script src="Libraries/slideFoto.js"></script>
+<script src="Libraries/registrazioneCheck.js"></script>
 </head>
 
 <body>
@@ -133,7 +133,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 							<tr><td bgcolor='#f9f9f9' colspan='2' id='slide'><img style='height: 360px; width: 540px; background-size: cover; padding: 5px;' ";
 	   
 	if($res['Foto1'] === ''){
-		print "src = 'Immagini/white.png'>";
+		print "src = 'Images/white.png'>";
 	}
 	else{
 	   print "src='data:image;base64,".$res['Foto1']."'>";
@@ -176,7 +176,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 					<td align='center' bgcolor='$bgcolor2'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 
 			if($res2['Foto'] === ''){
-				print "src='Immagini/white.png'>";
+				print "src='Images/white.png'>";
 			}
 			else{
 				print "src='data:image;base64,".$res2['Foto']."'>";

@@ -53,9 +53,9 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="utf-8">
 <title>Prenotazioni</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
 </head>
 
 <body>
@@ -73,7 +73,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
 		<td align="center" colspan="5" style="min-width: 300px"><h1>
-			<img src="Immagini/prenotazione.png"> Prenotazioni
+			<img src="Images/prenotazione.png"> Prenotazioni
 		</h1></td>
 	</tr>
 	
@@ -83,7 +83,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 			print "<tr><td align='center'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 
 			if($res['Foto1'] === ''){
-				print "src='Immagini/white.png'>";
+				print "src='Images/white.png'>";
 			}
 			else{
 				print "src='data:image;base64,".$res['Foto1']."'>";

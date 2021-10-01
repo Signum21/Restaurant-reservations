@@ -38,14 +38,14 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title>Registrazione locale</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/stileDrag.css">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/funzioni.js"></script>
-<script src="Librerie/dragFoto.js"></script>
-<script src="Librerie/registrazioneCheck.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/stileDrag.css">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/funzioni.js"></script>
+<script src="Libraries/dragFoto.js"></script>
+<script src="Libraries/registrazioneCheck.js"></script>
 </head>
 
 <body style="overflow-x: hidden">
@@ -64,7 +64,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
     	<td colspan="2" align="center">
-        	<h1><img src="Immagini/registrati.png"> Registrazione locale</h1>
+        	<h1><img src="Images/registrati.png"> Registrazione locale</h1>
         </td>
     </tr>
 	<tr>

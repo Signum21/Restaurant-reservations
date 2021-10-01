@@ -48,12 +48,12 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title>Locali</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<link rel="stylesheet" type="text/css" href="Librerie/stileRegistrati.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/menuLocale.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<link rel="stylesheet" type="text/css" href="Libraries/stileRegistrati.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/menuLocale.js"></script>
 </head>
 
 <body>
@@ -70,7 +70,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
 		<td align="center" style="min-width: 150px;  padding: 5px;" colspan="4"><h1>
-			<img src="Immagini/posate.png" style="vertical-align: middle;"> Locali <img src="Immagini/posate.png">
+			<img src="Images/posate.png" style="vertical-align: middle;"> Locali <img src="Images/posate.png">
 		</h1></td>
 	</tr>
 	<tr>
@@ -83,7 +83,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 		print "<tr id='".$res3['Id']."'><td align='center'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 		
 		if($res3['Foto1'] === ''){
-			print "src='Immagini/white.png'>";
+			print "src='Images/white.png'>";
 		}
 		else{
 			print "src='data:image;base64,".$res3['Foto1']."'>";

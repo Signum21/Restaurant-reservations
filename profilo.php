@@ -80,11 +80,11 @@ else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title>Profilo</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/funzioni.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/funzioni.js"></script>
 </head>
 
 <body>
@@ -113,7 +113,7 @@ else if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 <tr><td colspan='2' align='center'>
 <?php
-print "<h1><img src='Immagini/profilo.png'> Profilo ".$_SESSION[$datiProfilo]['Username']." <img src='Immagini/profilo.png'></h1></td></tr>\n";
+print "<h1><img src='Images/profilo.png'> Profilo ".$_SESSION[$datiProfilo]['Username']." <img src='Images/profilo.png'></h1></td></tr>\n";
 
 foreach ($_SESSION[$datiProfilo] as $key => $value) { 
 	if($key != 'Username' && $key != "Random" && $key != "Tipo" && $key != "Id"){

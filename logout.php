@@ -17,9 +17,9 @@ header("refresh:2; url=login.php");
 <head>
 <meta charset="UTF-8">
 <title>Logout</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
 </head>
 
 <body>
@@ -43,13 +43,13 @@ header("refresh:2; url=login.php");
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
     	<td align="center">
-        	<p><h1><img src='Immagini/ok.png'> Logout avvenuto con successo.</h1>
+        	<p><h1><img src='Images/ok.png'> Logout avvenuto con successo.</h1>
             Verrai ora reindirizzato alla pagina di login...<br/>
 			Se il browser non reindirizza in automatico la pagina clicca <a href='login.php' tabindex='-1'><font color='1E42C1'>QUI</font></a></p>
 		</td>
     </tr>
     <tr>
-    	<td align="center"><p><img src='Immagini/Loop.gif'></p></td>
+    	<td align="center"><p><img src='Images/Loop.gif'></p></td>
     </tr>
 </table>
 </body>

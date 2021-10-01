@@ -15,12 +15,12 @@ if($_GET['tipo'] != 'Cliente' && $_GET['tipo'] != 'Proprietario'){
 <head>
 <meta charset="UTF-8">
 <title>Registrazione</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/funzioni.js"></script>
-<script src="Librerie/registrazioneCheck.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/funzioni.js"></script>
+<script src="Libraries/registrazioneCheck.js"></script>
 </head>
 
 <body>
@@ -37,7 +37,7 @@ if($_GET['tipo'] != 'Cliente' && $_GET['tipo'] != 'Proprietario'){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
     	<td colspan="2" align="center">
-        	<h1><img src="Immagini/registrati.png"> Registrazione</h1>
+        	<h1><img src="Images/registrati.png"> Registrazione</h1>
         </td>
     </tr>
     <tr>
@@ -78,14 +78,14 @@ if($_GET['tipo'] != 'Cliente' && $_GET['tipo'] != 'Proprietario'){
 				}
 				?>
             </select>
-            <img src="Immagini/calendario.png" style="vertical-align: top">
+            <img src="Images/calendario.png" style="vertical-align: top">
         </td>
     </tr>
     <tr>
     	<td style="padding: 5px">Genere:</td>
     	<td align="center" style="padding: 5px">
-        	<img src="Immagini/uomo.png" style="vertical-align: top"> Uomo <input type="radio" name="genere" value="Uomo" required> | 
-            <input type="radio" name="genere" value="Donna" required> Donna <img src="Immagini/donna.png" style="vertical-align: top">
+        	<img src="Images/uomo.png" style="vertical-align: top"> Uomo <input type="radio" name="genere" value="Uomo" required> | 
+            <input type="radio" name="genere" value="Donna" required> Donna <img src="Images/donna.png" style="vertical-align: top">
         </td>
     </tr>
     <tr><td colspan="2" height="15"></td></tr>

@@ -43,12 +43,12 @@ else{
 <head>
 <meta charset="utf-8">
 <title>Prenotazioni</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/modal.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/funzioni.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/modal.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/funzioni.js"></script>
 </head>
 
 <body>
@@ -66,14 +66,14 @@ else{
 <div class="modal">
 	<div class="modal-content" style="width: 300px">
 		<span class="close" onclick='$(".modal").css("display","none");'>&times;</span>
-		<div align="center" id="risultato"><img src="Immagini/loading.gif" style="vertical-align:top"> Caricamento in corso...</div>
+		<div align="center" id="risultato"><img src="Images/loading.gif" style="vertical-align:top"> Caricamento in corso...</div>
 	</div>
 </div>
 
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
 		<td align="center" colspan="5" style="min-width: 300px"><h1>
-			<img src="Immagini/prenotazione.png"> Prenotazioni <?php print $res2['Nome'] ?>
+			<img src="Images/prenotazione.png"> Prenotazioni <?php print $res2['Nome'] ?>
 		</h1></td>
 	</tr>
 	

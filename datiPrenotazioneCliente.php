@@ -73,11 +73,11 @@ else{
 <head>
 <meta charset="utf-8">
 <title>Dati prenotazione</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/viewLocale.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/viewLocale.js"></script>
 </head>
 
 <body>
@@ -173,7 +173,7 @@ print "<h1>".$res2['Nome']."</h1></td></tr>
 				<td align='center' bgcolor='$bgcolor2'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 
 		if($res4['Foto'] === ''){
-			print "src='Immagini/white.png'>";
+			print "src='Images/white.png'>";
 		}
 		else{
 			print "src='data:image;base64,".$res4['Foto']."'>";

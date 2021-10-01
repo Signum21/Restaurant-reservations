@@ -38,11 +38,11 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title>Ricerca locali</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/cercaLocali.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/cercaLocali.js"></script>
 </head>
 
 <body>
@@ -60,7 +60,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 
 <form onSubmit="return false">
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white" id="locali">
-	<tr><td style="width: 500px" align="center" colspan="3"><h1>Cerca locali <img src='Immagini/lente.png'></h1></td></tr>
+	<tr><td style="width: 500px" align="center" colspan="3"><h1>Cerca locali <img src='Images/lente.png'></h1></td></tr>
 	<tr>
          <td align="center" style="width: 100px">
           	<select title="Seleziona il tipo di ricerca" id="tipo">

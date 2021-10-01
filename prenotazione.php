@@ -65,14 +65,14 @@ else{
 <head>
 <meta charset="utf-8">
 <title>Prenotazione</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<link rel="stylesheet" type="text/css" href="Librerie/modal.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/viewLocale.js"></script>
-<script src="Librerie/funzioni.js"></script>
-<script src="Librerie/registrazioneCheck.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<link rel="stylesheet" type="text/css" href="Libraries/modal.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/viewLocale.js"></script>
+<script src="Libraries/funzioni.js"></script>
+<script src="Libraries/registrazioneCheck.js"></script>
 </head>
 
 <body>
@@ -91,12 +91,12 @@ else{
 <div class="modal">
 	<div class="modal-content">
 		<span class="close" onclick='$(".modal").css("display","none");'>&times;</span>
-		<p align="center" id="risultato"><img src="Immagini/loading.gif" style="vertical-align:top"> Richiesta di prenotazione in corso...</p>
+		<p align="center" id="risultato"><img src="Images/loading.gif" style="vertical-align:top"> Richiesta di prenotazione in corso...</p>
 	</div>
 </div>
 	
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
-	<tr><td align="center" colspan='2'><h1><img src="Immagini/prenotazione.png"> Prenotazione</h1></td></tr>
+	<tr><td align="center" colspan='2'><h1><img src="Images/prenotazione.png"> Prenotazione</h1></td></tr>
 	<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(4, "dati")'>Dati<div id='dati' style='float: right'>-</div></ul></td></tr>
 	<tr>
 		<td align='center' class='dati' style='vertical-align: top;' width="626px">

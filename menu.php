@@ -45,13 +45,13 @@ else{
 <head>
 <meta charset="UTF-8">
 <title>Menù</title>
-<link rel="shortcut icon" href="Immagini/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Librerie/stili.css">
-<link rel="stylesheet" type="text/css" href="Librerie/stileDrag.css">
-<link rel="stylesheet" type="text/css" href="Librerie/header.css">
-<script src="Librerie/jquery-3.2.1.min.js"></script>
-<script src="Librerie/dragFotoMenu.js"></script>
-<script src="Librerie/menuLocale.js"></script>
+<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="stylesheet" type="text/css" href="Libraries/stili.css">
+<link rel="stylesheet" type="text/css" href="Libraries/stileDrag.css">
+<link rel="stylesheet" type="text/css" href="Libraries/header.css">
+<script src="Libraries/jquery-3.2.1.min.js"></script>
+<script src="Libraries/dragFotoMenu.js"></script>
+<script src="Libraries/menuLocale.js"></script>
 </head>
 
 <body style="overflow-x: hidden">
@@ -69,7 +69,7 @@ else{
 <form id="menu">
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white" id="addMenu">
 	<tr>
-		<td align="center" colspan="6"><h1><img src="Immagini/posate.png" style="vertical-align: middle"> Menù <?php print $NomeLocale ?> <img src="Immagini/posate.png"></h1></td>
+		<td align="center" colspan="6"><h1><img src="Images/posate.png" style="vertical-align: middle"> Menù <?php print $NomeLocale ?> <img src="Images/posate.png"></h1></td>
 	</tr>
 	<tr>
 		<td id="redTipo">
@@ -98,7 +98,7 @@ else{
 				<td align='center' style='word-break: break-all;' width='300px'>".$res['Ingredienti']."</td><td align='center'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 		
 		if($res['Foto'] === ''){
-			print "src='Immagini/white.png'>";
+			print "src='Images/white.png'>";
 		}
 		else{
 			print "src='data:image;base64,".$res['Foto']."'>";
