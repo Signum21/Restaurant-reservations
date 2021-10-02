@@ -8,14 +8,10 @@ This web application allows owners to put their restaurants online so that the c
 
 <h2>Instructions</h2>
 
-If you want to test it you'll need a local web server running on the port 80 and a DBMS (eg. MySQL)
+If you want to test it you'll need a web server and MySQL
+You can change the database settings on the env.json file
 
-Set the DBMS like this:<br/>
-Port: 3306<br/>
-Username: "root"<br/>
-Password: ""
-
-Import the file "Database setup.sql" which will create the database and all the tables you need to save the data<br/>
+Import the file db_setup.sql which will create the database and all the tables you need to save the data<br/>
 Copy all the others repository files in the right web server directory (eg. htdocs for XAMPP)<br/>
 Open the browser, type "localhost" and it will lead you to the home page where you can create an account
 <br/><br/>
