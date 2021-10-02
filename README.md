@@ -8,12 +8,9 @@ This web application allows owners to put their restaurants online so that the c
 
 <h2>Instructions</h2>
 
-If you want to test it you'll need a web server and MySQL
-You can change the database settings on the env.json file
-
-Import the file db_setup.sql which will create the database and all the tables you need to save the data<br/>
-Copy all the others repository files in the right web server directory (eg. htdocs for XAMPP)<br/>
-Open the browser, type "localhost" and it will lead you to the home page where you can create an account
+If you want to test it you'll need a web server and MySQL<br/>
+You can change the database settings on the env.json file<br/>
+Import the file db_setup.sql which will create the database and all the tables you need to save the data
 <br/><br/>
 
 
