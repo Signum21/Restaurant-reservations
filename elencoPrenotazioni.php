@@ -5,7 +5,10 @@ $randomValue = 'r5f7ryVc3ye';
 $datiProfilo = 'dh7aP7fj4ho';
 $data = "DATE_FORMAT(Prenotazioni.Data, '%d/%m/%Y')";	
 
-$con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
+$json_str = file_get_contents("env.json");
+$json = json_decode($json_str, true);
+$con = mysqli_connect($json['db_host'], $json['db_username'], $json['db_password'], $json['db_database'], $json['db_port']);
+
 $_sql = "SELECT Locali.Foto1, Locali.Nome, Prenotazioni.Id, $data AS Data, Prenotazioni.Stato FROM Prenotazioni INNER JOIN Locali
 		 ON Locali.Id = Prenotazioni.LocaleId WHERE Prenotazioni.UserId = ";
 

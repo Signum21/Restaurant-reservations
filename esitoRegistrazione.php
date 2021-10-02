@@ -7,6 +7,7 @@ if (!isset($_POST['nome']) || !isset($_POST['cognome']) || !isset($_POST['giorno
 	header("location: /registrazione.php?tipo=$tipo");
 	die();
 }
+
 $nome = trim($_POST['nome']);
 $cognome = trim($_POST['cognome']);
 
@@ -23,7 +24,9 @@ $passwordClear = $_POST['password'];
 $passwordClear = str_replace(' ','',$passwordClear);
 $password = password_hash($passwordClear, PASSWORD_BCRYPT);
 
-$con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
+$json_str = file_get_contents("env.json");
+$json = json_decode($json_str, true);
+$con = mysqli_connect($json['db_host'], $json['db_username'], $json['db_password'], $json['db_database'], $json['db_port']);
 
 do{
 	$random = rand(1,999999999);

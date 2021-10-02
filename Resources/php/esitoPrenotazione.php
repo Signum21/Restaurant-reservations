@@ -18,14 +18,14 @@ $persone = $_POST['persone'];
 /*             DATI CARTA
 
 $nomeIntestatario = trim($_POST['nome']);
-
 $numeroCarta = trim($_POST['numero']);
 $numeroCarta = str_replace(' ','',$numeroCarta);
-
 $dataScadenza = "28-".$_POST['meseScadenza']."-".$_POST['annoScadenza'];
 $cvv = trim($_POST['cvv']);*/
 
-$con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
+$json_str = file_get_contents("../../env.json");
+$json = json_decode($json_str, true);
+$con = mysqli_connect($json['db_host'], $json['db_username'], $json['db_password'], $json['db_database'], $json['db_port']);
 
 $sql = "INSERT INTO Prenotazioni (UserId,LocaleId,Data,Ora,Persone,Stato) 
 		VALUES ('$idUtente','$idLocale','$dataPrenotazione','$ora','$persone','Richiesta')";

@@ -6,7 +6,9 @@ $datiProfilo = 'dh7aP7fj4ho';
 
 if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){		
 	$dataNascita = "DATE_FORMAT(DataNascita, '%d/%m/%Y')";	
-	$con = mysqli_connect('localhost','root','','sitoRistoranti','3306');	
+	$json_str = file_get_contents("env.json");
+	$json = json_decode($json_str, true);
+	$con = mysqli_connect($json['db_host'], $json['db_username'], $json['db_password'], $json['db_database'], $json['db_port']);	
 	$sql = "SELECT Id, Nome, Cognome, $dataNascita AS 'Data di nascita', Genere, Tipo, Random, Username FROM Users 
 			WHERE Random = '".$_COOKIE[$randomValue]."' AND Attivo = 1";
 	

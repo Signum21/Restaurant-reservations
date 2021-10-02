@@ -45,8 +45,9 @@ if($_FILES['foto4']['tmp_name'] != ''){
 	$foto4 = file_get_contents($foto4);
 	$foto4 = base64_encode($foto4);
 }
-
-$con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
+$json_str = file_get_contents("env.json");
+$json = json_decode($json_str, true);
+$con = mysqli_connect($json['db_host'], $json['db_username'], $json['db_password'], $json['db_database'], $json['db_port']);
 
 $sql= "INSERT INTO Locali (UserId,Nome,Numero,Citta,CAP,Indirizzo,NumeroCivico,Foto1,Foto2,Foto3,Foto4,Attivo) 
 		VALUES ('$UserId','$nome','$numero','$citta','$cap','$indirizzo','$civico','$foto1','$foto2','$foto3','$foto4',1)";

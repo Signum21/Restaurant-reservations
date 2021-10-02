@@ -1,5 +1,7 @@
 <?php
-$con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
+$json_str = file_get_contents("../../env.json");
+$json = json_decode($json_str, true);
+$con = mysqli_connect($json['db_host'], $json['db_username'], $json['db_password'], $json['db_database'], $json['db_port']);
 
 if(isset($_GET['Val']) && $_GET['Val'] === 'Aggiungi'){
 	if(!isset($_GET['LocaleId']) || !isset($_GET['Tipo']) || !isset($_GET['Nome']) || !isset($_GET['Prezzo']) || !isset($_GET['Ingredienti'])

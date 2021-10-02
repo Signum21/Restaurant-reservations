@@ -10,7 +10,9 @@ if (!isset($_GET['dis']) || $_GET['dis'] !== $_SESSION[$datiProfilo]['Random']){
 }
 $random = $_GET['dis'];
 
-$con = mysqli_connect('localhost','root','','sitoRistoranti','3306');
+$json_str = file_get_contents("env.json");
+$json = json_decode($json_str, true);
+$con = mysqli_connect($json['db_host'], $json['db_username'], $json['db_password'], $json['db_database'], $json['db_port']);
 $sql = "UPDATE Users SET Attivo = 0 WHERE Random = '$random'"; 
 
 if(mysqli_query($con,$sql)){
