@@ -4,30 +4,32 @@ var original = true;
 function ConfermaReset(a){
 	let richiesta = window.confirm("Sicuro di voler reimpostare il modulo?");
 	
-	if(a === 1 && richiesta === true){
-		let labDrag = $('.dropzone');
-		
-		for(let b = 0; b<labDrag.length; b++){
-			labDrag[b].style.backgroundImage = 'url()';		
-			labDrag[b].className = 'dropzone';
+	if(richiesta == true){
+		if(a === 1){
+			let labDrag = $('.dropzone');
 			
-			let c = b + 1;
-			$('#sign'+c).css('display','none');
+			for(let b = 0; b<labDrag.length; b++){
+				labDrag[b].style.backgroundImage = 'url()';		
+				labDrag[b].className = 'dropzone';
+				
+				let c = b + 1;
+				$('#sign'+c).css('display','none');
+			}
+			$('#check_empty_locale').html('');
+			$('#checkType').html('');
 		}
-		$('#check_empty_locale').html('');
-		$('#checkType').html('');
-	}
-	else if(a === 2 && richiesta === true){		
-		$('#check_login').html('');
-	}
-	else if(a === 3 && richiesta === true){
-		$('#check_empty').html('');
-		$('#check_username2').html('');
-		$('#check_password').html('');
-		
-		$("#check_username").html('');
-		$("#username").css('width', '100%');
-	}
+		else if(a === 2){		
+			$('#check_login').html('');
+		}
+		else if(a === 3){
+			$('#check_empty').html('');
+			$('#check_username2').html('');
+			$('#check_password').html('');
+			
+			$("#check_username").html('');
+			$("#username").css('width', '100%');
+		}
+	}	
 	return richiesta;
 }
 

@@ -1,9 +1,8 @@
-var usernameDisponibile;
+var usernameAvailable;
 var beforeResponse = 2;
-var i = 0;
 
 function ControlloRegistrazione(){
-	i = 0;
+	let i = 0;
 	let nome = document.registrazione.nome.value;
 	let cognome = document.registrazione.cognome.value;
 	let giorno = document.registrazione.giorno.value;
@@ -21,7 +20,7 @@ function ControlloRegistrazione(){
 		$("#check_empty").html(''); 
 	}
 	
-	if(usernameDisponibile === false){
+	if(usernameAvailable === false){
 		$("#check_username2").html('<font color="red"><img src="Images/warning piccolo.png" style="vertical-align:top"> Username non disponibile.</font>');
 		document.registrazione.username.focus();
 		i++;
@@ -42,6 +41,39 @@ function ControlloRegistrazione(){
 	return (i > 0) ? false : true;
 }
 
+function ControlloUsername(){
+	let usernameValue = document.registrazione.username.value;
+		
+	if (usernameValue.trim() !== ''){
+		$.ajax({ 
+			type: "POST", url: "Resources/php/controlli.php?val=username", data: 'username='+usernameValue, success: 
+	
+			function(response){ 
+				if(response !== beforeResponse){
+					if(response === '0'){
+						checkUsernameResult("ok piccolo.png", true, response);
+					}
+					else{
+						checkUsernameResult("error piccolo.png", false, response);
+					}
+				}				
+			}
+		});
+	}
+	else{ 
+		$("#username").css('width', '100%');
+		$("#check_username").html('');
+		beforeResponse = 2;
+	}
+}
+
+function checkUsernameResult(image, available, response) {
+	$("#username").css('width', '89%');
+	$("#check_username").html('<img align="center" src="Images/' + image + '">');
+	usernameAvailable = available;
+	beforeResponse = response;
+}
+
 function controlloRegistrazioneLocale(){
 	let nomeLocale = document.registrazioneLocale.nomeLocale.value;
 	let numeroLocale = document.registrazioneLocale.numeroLocale.value;
@@ -56,39 +88,8 @@ function controlloRegistrazioneLocale(){
 	}
 }
 
-function ControlloUsername(){
-	let usernameValue = document.registrazione.username.value;
-		
-	if (usernameValue.trim() !== ''){
-		$.ajax({ 
-			type: "POST", url: "Resources/php/controlli.php?val=username", data: 'username='+usernameValue, success: 
-	
-			function(response){ 
-				if(response === '0' && response !== beforeResponse){	
-					$("#username").css('width', '89%');
-					$("#check_username").html('<img align="center" src="Images/ok piccolo.png">');
-					usernameDisponibile = true;
-					beforeResponse = response;
-				}
-				else if(response === '1' && response !== beforeResponse){
-					$("#username").css('width', '89%');
-					$("#check_username").html('<img align="center" src="Images/error piccolo.png">');
-					usernameDisponibile = false;
-					beforeResponse = response;
-				}
-			}
-		});
-	}
-	else{ 
-		$("#username").css('width', '100%');
-		$("#check_username").html('');
-		beforeResponse = 2;
-	}
-}
-
 function controlloPrenotazione(){
-	i=0;
-	let e=0;
+	let i = 0, e = 0;
 	let giorno = document.prenotazione.giorno.value;
 	let mese = document.prenotazione.mese.value;
 	let anno = document.prenotazione.anno.value;
@@ -105,9 +106,9 @@ function controlloPrenotazione(){
 	}	
 	let menuCounter = $("[name^='menu']");
 	
-	for(let a=0; a<menuCounter.length; a++){
+	for(let a = 0; a < menuCounter.length; a++){
 		if(menuCounter[a].value > 0){
-			e=0;
+			e = 0;
 			break;
 		}
 		else{ 
@@ -115,7 +116,7 @@ function controlloPrenotazione(){
 		}
 	}
 	
-	if(e>0){
+	if(e > 0){
 		i++;
 		$("#check_menu").html('<font color="red"><img src="Images/warning piccolo.png" style="vertical-align:top"> Seleziona almeno un piatto del menù.</font>');
 	}
@@ -127,8 +128,7 @@ function controlloPrenotazione(){
 }
 
 function controlloPagamento(idUtente, idLocale, _menu){
-	i = 0;
-	
+	let i = 0;	
 	let data = $("#data").html();
 	let ora = $("#ora").html();
 	let persone = $("#persone").html();

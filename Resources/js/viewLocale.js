@@ -1,34 +1,27 @@
-function navShow(elementi, classe){
-	var navClass = document.getElementsByClassName(classe);
+function navShow(_class){
+	let navClass = document.getElementsByClassName(_class);
 	
 	if(navClass[0].style.visibility !== 'hidden'){
-		for(var b=0; b<elementi; b+=2){
-			navClass[b].style.visibility = 'hidden';
-			navClass[b+1].style.display = 'none';
-		}
-		$('#'+classe).html('+');
+		changeElementsState(navClass, 'hidden', 'none', _class, '+');
 	}
 	else{
-		for(var c=0; c<elementi; c+=2){
-			navClass[c].style.visibility = 'visible';
-			navClass[c+1].style.display = 'inline';
-		}
-		$('#'+classe).html('-');
+		changeElementsState(navClass, 'visible', 'inline', _class, '-');
 	}
 }
 
-function filtro(_tipo){
-	var tipo = document.getElementById(_tipo);
-	var tipoArr = document.getElementsByClassName(_tipo);
-	
-	if(tipo.checked === false){		
-		for(var a = 0; a<tipoArr.length; a++){
-			tipoArr[a].style.display = 'none';
-		}
+function changeElementsState(navClass, _visibility, _display, _class, sign) {
+	for(let c = 0; c < navClass.length; c += 2){
+		navClass[c].style.visibility = _visibility;
+		navClass[c+1].style.display = _display;
 	}
-	else{		
-		for(var b = 0; b<tipoArr.length; b++){
-			tipoArr[b].style.display = '';
-		}
+	$('#'+_class).html(sign);
+}
+
+function filtro(_tipo){
+	let tipo = document.getElementById(_tipo);
+	let tipoArr = document.getElementsByClassName(_tipo);
+	
+	for(let a = 0; a < tipoArr.length; a++){
+		tipoArr[a].style.display = (tipo.checked === false) ? 'none' : '';
 	}
 }

@@ -43,8 +43,6 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <link rel="shortcut icon" href="Images/posatePiccole.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
-<script src="Resources/js/jquery-3.2.1.min.js"></script>
-<script src="Resources/js/cercaLocali.js"></script>
 </head>
 
 <body>
@@ -61,7 +59,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 </ul><br/>
 
 <form onSubmit="return false">
-<table align="center" border="5" bordercolor="1E42C1" bgcolor="white" id="locali">
+<table align="center" border="5" bordercolor="1E42C1" bgcolor="white" id="restaurants">
 	<tr><td style="width: 500px" align="center" colspan="3"><h1>Cerca locali <img src='Images/lente.png'></h1></td></tr>
 	<tr>
          <td align="center" style="width: 100px">
@@ -70,11 +68,13 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
         	</select>
 		</td>
 		<td><input title="Cerca locale" placeholder="Cerca locale" id='filtro'></td>
-		<td style="width: 100px"><button onClick="cerca()">Cerca</button></td>
+		<td style="width: 100px"><button id="searchButton">Cerca</button></td>
 	</tr>
 </table>
 </form>
 <br>
 
+<script src="Resources/js/jquery-3.2.1.min.js"></script>
+<script src="Resources/js/searchRestaurants.js"></script>
 </body>
 </html>

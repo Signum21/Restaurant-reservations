@@ -101,7 +101,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<?php
 	print "<tr><td align='center' colspan='2'><h1>".$res['Nome']."</h1></td></tr>
-			<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(4, ".'"dati"'.")'>Dati<div id='dati' style='float: right'>-</div></ul></td></tr>
+			<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(".'"dati"'.")'>Dati<div id='dati' style='float: right'>-</div></ul></td></tr>
 			<tr>
 				<td width='540px' align='center' class='dati'>
 					<div class='dati'>
@@ -147,7 +147,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 					</div>
 				</td>
 			</tr>
-			<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(2, ".'"menu"'.")'>Menù<div id='menu' style='float: right'>+</div></ul></td></tr>
+			<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(".'"menu"'.")'>Menù<div id='menu' style='float: right'>+</div></ul></td></tr>
 			<tr>
 				<td colspan='2' class='menu' style='visibility: hidden' align='center'>
 					<div class='menu' style='display: none'>"; 					
@@ -194,7 +194,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	}
 	print "</div></td></tr>";
 	?>   
-<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(2, "prenota")'>Prenotazione<div id='prenota' style='float: right'>+</div></ul></td></tr>
+<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow("prenota")'>Prenotazione<div id='prenota' style='float: right'>+</div></ul></td></tr>
 <tr>
 	<td colspan='2' class='prenota' style='visibility: hidden' align='center'>
 		<div class='prenota' style='display: none;'>
