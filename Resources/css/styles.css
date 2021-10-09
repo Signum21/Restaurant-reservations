@@ -20,7 +20,7 @@ img { vertical-align:middle; }
 h1 img { vertical-align:top; }
 
 body { 
-	background-image:url(../../Images/sfondo.jpg);
+	background-image:url(../../Images/background.jpg);
 	background-size:cover;
 }
 

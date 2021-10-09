@@ -50,12 +50,12 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title>Locali</title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
-<link rel="stylesheet" type="text/css" href="Resources/css/stileRegistrati.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/dropContentBody.css">
 <script src="Resources/js/jquery-3.2.1.min.js"></script>
-<script src="Resources/js/menuLocale.js"></script>
+<script src="Resources/js/menu.js"></script>
 </head>
 
 <body>
@@ -72,7 +72,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
 		<td align="center" style="min-width: 150px;  padding: 5px;" colspan="4"><h1>
-			<img src="Images/posate.png" style="vertical-align: middle;"> Locali <img src="Images/posate.png">
+			<img src="Images/cutlery.png" style="vertical-align: middle;"> Locali <img src="Images/cutlery.png">
 		</h1></td>
 	</tr>
 	<tr>

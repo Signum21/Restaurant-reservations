@@ -55,8 +55,8 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="utf-8">
 <title>Prenotazioni</title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 </head>
 
@@ -75,7 +75,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
 		<td align="center" colspan="5" style="min-width: 300px"><h1>
-			<img src="Images/prenotazione.png"> Prenotazioni
+			<img src="Images/reservation.png"> Prenotazioni
 		</h1></td>
 	</tr>
 	

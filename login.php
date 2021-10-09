@@ -13,12 +13,12 @@ if (isset($_SESSION[$datiProfilo]) || isset($_COOKIE[$randomValue])){
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
-<link rel="stylesheet" type="text/css" href="Resources/css/stileRegistrati.css">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/dropContentBody.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 <script src="Resources/js/jquery-3.2.1.min.js"></script>
-<script src="Resources/js/funzioni.js"></script>
+<script src="Resources/js/functions.js"></script>
 </head>
 
 <body>

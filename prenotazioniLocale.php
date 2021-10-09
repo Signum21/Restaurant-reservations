@@ -45,12 +45,12 @@ else{
 <head>
 <meta charset="utf-8">
 <title>Prenotazioni</title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/modal.css">
 <script src="Resources/js/jquery-3.2.1.min.js"></script>
-<script src="Resources/js/funzioni.js"></script>
+<script src="Resources/js/functions.js"></script>
 </head>
 
 <body>
@@ -75,7 +75,7 @@ else{
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
 		<td align="center" colspan="5" style="min-width: 300px"><h1>
-			<img src="Images/prenotazione.png"> Prenotazioni <?php print $res2['Nome'] ?>
+			<img src="Images/reservation.png"> Prenotazioni <?php print $res2['Nome'] ?>
 		</h1></td>
 	</tr>
 	

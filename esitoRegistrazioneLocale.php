@@ -67,8 +67,8 @@ else{
 <head>
 <meta charset="UTF-8">
 <title>Esito registrazione locale</title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 </head>
 

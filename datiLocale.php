@@ -45,11 +45,11 @@ else{
 <head>
 <meta charset="UTF-8">
 <title>Dati locale</title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <script src="Resources/js/jquery-3.2.1.min.js"></script>
-<script src="Resources/js/slideFoto.js"></script>
+<script src="Resources/js/slideImages.js"></script>
 </head>
 
 <body>
@@ -66,7 +66,7 @@ else{
 
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 <?php
-print "<tr><td colspan='3' align='center'><h1><img src='Images/posate.png'> Dati ".$res['Nome']." <img src='Images/posate.png'></h1></td></tr>
+print "<tr><td colspan='3' align='center'><h1><img src='Images/cutlery.png'> Dati ".$res['Nome']." <img src='Images/cutlery.png'></h1></td></tr>
 		<tr><td width='200px' align='center'>Nome:</td><td width='200px' align='center'>".$res['Nome']."</td>
 		<td align='center' rowspan='6'>
 			<div id='slide'><img style='height: 360px; width: 540px; background-size: cover; padding: 5px;' src='data:image;base64,".$res['Foto1']."'></div>

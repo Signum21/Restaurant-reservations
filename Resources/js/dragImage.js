@@ -122,7 +122,7 @@ function mostraDrag(foto){
 			let inputDrag = $('.inputfile');
 
 			if(response === 'errorType'){
-				$('#checkType').html("<img src='Images/warning piccolo.png' style='vertical-align:top'> Puoi inserire solo immagini");
+				$('#checkType').html("<img src='Images/smallWarning.png' style='vertical-align:top'> Puoi inserire solo immagini");
 
 				for(let b = 0; b < labDrag.length; b++){
 					if(inputDrag[b].files.length > 0){

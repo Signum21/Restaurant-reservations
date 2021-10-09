@@ -47,13 +47,13 @@ else{
 <head>
 <meta charset="UTF-8">
 <title>Menù</title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
-<link rel="stylesheet" type="text/css" href="Resources/css/stileDrag.css">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/dragStyle.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 <script src="Resources/js/jquery-3.2.1.min.js"></script>
-<script src="Resources/js/dragFotoMenu.js"></script>
-<script src="Resources/js/menuLocale.js"></script>
+<script src="Resources/js/dragMenuImage.js"></script>
+<script src="Resources/js/menu.js"></script>
 </head>
 
 <body style="overflow-x: hidden">
@@ -71,7 +71,7 @@ else{
 <form id="menu">
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white" id="addMenu">
 	<tr>
-		<td align="center" colspan="6"><h1><img src="Images/posate.png" style="vertical-align: middle"> Menù <?php print $NomeLocale ?> <img src="Images/posate.png"></h1></td>
+		<td align="center" colspan="6"><h1><img src="Images/cutlery.png" style="vertical-align: middle"> Menù <?php print $NomeLocale ?> <img src="Images/cutlery.png"></h1></td>
 	</tr>
 	<tr>
 		<td id="redTipo">

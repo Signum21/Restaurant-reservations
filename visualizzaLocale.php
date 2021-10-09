@@ -75,13 +75,13 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title><?php print $res['Nome']; ?></title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 <script src="Resources/js/jquery-3.2.1.min.js"></script>
-<script src="Resources/js/viewLocale.js"></script>
-<script src="Resources/js/slideFoto.js"></script>
-<script src="Resources/js/registrazioneCheck.js"></script>
+<script src="Resources/js/sectionDisplay.js"></script>
+<script src="Resources/js/slideImages.js"></script>
+<script src="Resources/js/sendCheck.js"></script>
 </head>
 
 <body>

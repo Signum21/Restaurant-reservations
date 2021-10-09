@@ -67,14 +67,14 @@ else{
 <head>
 <meta charset="utf-8">
 <title>Prenotazione</title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/modal.css">
 <script src="Resources/js/jquery-3.2.1.min.js"></script>
-<script src="Resources/js/viewLocale.js"></script>
-<script src="Resources/js/funzioni.js"></script>
-<script src="Resources/js/registrazioneCheck.js"></script>
+<script src="Resources/js/sectionDisplay.js"></script>
+<script src="Resources/js/functions.js"></script>
+<script src="Resources/js/sendCheck.js"></script>
 </head>
 
 <body>
@@ -98,8 +98,8 @@ else{
 </div>
 	
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
-	<tr><td align="center" colspan='2'><h1><img src="Images/prenotazione.png"> Prenotazione</h1></td></tr>
-	<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(4, "dati")'>Dati<div id='dati' style='float: right'>-</div></ul></td></tr>
+	<tr><td align="center" colspan='2'><h1><img src="Images/reservation.png"> Prenotazione</h1></td></tr>
+	<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow("dati")'>Dati<div id='dati' style='float: right'>-</div></ul></td></tr>
 	<tr>
 		<td align='center' class='dati' style='vertical-align: top;' width="626px">
 			<div class='dati'>
@@ -153,7 +153,7 @@ else{
 			</div>
 		</td>
 	</tr>
-	<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(2, "pagamento")'>Pagamento<div id='pagamento' style='float: right'>+</div></ul></td></tr>
+	<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow("pagamento")'>Pagamento<div id='pagamento' style='float: right'>+</div></ul></td></tr>
 	<tr>
 		<td colspan="2" align="center" class="pagamento" style='visibility: hidden'>
 			<div class="pagamento" style='display: none'>

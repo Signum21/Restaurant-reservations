@@ -76,11 +76,11 @@ else{
 <head>
 <meta charset="utf-8">
 <title>Dati prenotazione</title>
-<link rel="shortcut icon" href="Images/posatePiccole.png">
+<link rel="shortcut icon" href="Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
-<link rel="stylesheet" type="text/css" href="Resources/css/stili.css">
+<link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <script src="Resources/js/jquery-3.2.1.min.js"></script>
-<script src="Resources/js/viewLocale.js"></script>
+<script src="Resources/js/sectionDisplay.js"></script>
 </head>
 
 <body>
@@ -100,7 +100,7 @@ else{
 		<td align='center' colspan='2'>
 <?php
 print "<h1>".$res2['Nome']."</h1></td></tr>
-		<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(4, ".'"dati"'.")'>Dati prenotazione<div id='dati' style='float: right'>-</div></ul></td></tr>
+		<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(".'"dati"'.")'>Dati prenotazione<div id='dati' style='float: right'>-</div></ul></td></tr>
 		<tr>
 			<td width='540px' align='center' class='dati'>
 				<div class='dati'>
@@ -155,7 +155,7 @@ print "<h1>".$res2['Nome']."</h1></td></tr>
 				</div>
 			</td>
 		</tr>
-		<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(2, ".'"menu"'.")'>Menù<div id='menu' style='float: right'>+</div></ul></td></tr>
+		<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow(".'"menu"'.")'>Menù<div id='menu' style='float: right'>+</div></ul></td></tr>
 		<tr>
 			<td colspan='2' class='menu' style='visibility: hidden' align='center'>
 				<div class='menu' style='display: none'>
