@@ -35,7 +35,7 @@ function ConfermaReset(a){
 
 function ControlloLogin(){	
 	if( original === true){
-		$("#check_login").html('<img src="Images/loading.gif" style="vertical-align:top"> Checking...');
+		$("#check_login").html('<img src="Resources/Images/loading.gif" style="vertical-align:top"> Checking...');
 		let usernameValue = document.login.username.value;
 		let passwordValue = document.login.password.value;
 
@@ -48,7 +48,7 @@ function ControlloLogin(){
 					$( "#sub" ).submit();
 				}
 				else{ 
-					$("#check_login").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> Username o password errati.</font>');
+					$("#check_login").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> Username o password errati.</font>');
 				}
 			}
 		});
@@ -83,7 +83,7 @@ function dettagliPrenotazione(id){
 				$('#risultato').html(response);					
 			}
 			else {
-				$('#risultato').html('<h3><img src="Images/smallError.png" style="vertical-align:top"> Caricamento fallito </h3>'); 
+				$('#risultato').html('<h3><img src="Resources/Images/smallError.png" style="vertical-align:top"> Caricamento fallito </h3>'); 
 			}
 		}
 	});
@@ -97,12 +97,12 @@ function statoPrenotazione(_risposta, Id){
 
 		function(response){ 
 			if(response === '1'){				
-				$('#check_risposta').html('<img src="Images/smallOk.png" style="vertical-align:top"> '+risposta+'!'); 
+				$('#check_risposta').html('<img src="Resources/Images/smallOk.png" style="vertical-align:top"> '+risposta+'!'); 
 				$("#"+Id).html(risposta);
 				$("#statoButtons").css('display','none');
 			}
 			else {
-				$('#check_risposta').html('<img src="Images/smallError.png" style="vertical-align:top"> Caricamento fallito'); 
+				$('#check_risposta').html('<img src="Resources/Images/smallError.png" style="vertical-align:top"> Caricamento fallito'); 
 			}
 		}
 	});

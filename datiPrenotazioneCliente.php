@@ -76,7 +76,7 @@ else{
 <head>
 <meta charset="utf-8">
 <title>Dati prenotazione</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <script src="Resources/js/jquery-3.2.1.min.js"></script>
@@ -176,7 +176,7 @@ print "<h1>".$res2['Nome']."</h1></td></tr>
 				<td align='center' bgcolor='$bgcolor2'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 
 		if($res4['Foto'] === ''){
-			print "src='Images/white.png'>";
+			print "src='Resources/Images/white.png'>";
 		}
 		else{
 			print "src='data:image;base64,".$res4['Foto']."'>";

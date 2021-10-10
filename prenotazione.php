@@ -67,7 +67,7 @@ else{
 <head>
 <meta charset="utf-8">
 <title>Prenotazione</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/modal.css">
@@ -93,12 +93,12 @@ else{
 <div class="modal">
 	<div class="modal-content">
 		<span class="close" onclick='$(".modal").css("display","none");'>&times;</span>
-		<p align="center" id="risultato"><img src="Images/loading.gif" style="vertical-align:top"> Richiesta di prenotazione in corso...</p>
+		<p align="center" id="risultato"><img src="Resources/Images/loading.gif" style="vertical-align:top"> Richiesta di prenotazione in corso...</p>
 	</div>
 </div>
 	
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
-	<tr><td align="center" colspan='2'><h1><img src="Images/reservation.png"> Prenotazione</h1></td></tr>
+	<tr><td align="center" colspan='2'><h1><img src="Resources/Images/reservation.png"> Prenotazione</h1></td></tr>
 	<tr><td colspan='2' align='center'><ul class='nav' onclick='navShow("dati")'>Dati<div id='dati' style='float: right'>-</div></ul></td></tr>
 	<tr>
 		<td align='center' class='dati' style='vertical-align: top;' width="626px">

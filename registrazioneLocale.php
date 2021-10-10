@@ -40,7 +40,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title>Registrazione locale</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/dragStyle.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
@@ -66,7 +66,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
     	<td colspan="2" align="center">
-        	<h1><img src="Images/signin.png"> Registrazione locale</h1>
+        	<h1><img src="Resources/Images/signin.png"> Registrazione locale</h1>
         </td>
     </tr>
 	<tr>

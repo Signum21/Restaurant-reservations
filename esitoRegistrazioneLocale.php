@@ -67,7 +67,7 @@ else{
 <head>
 <meta charset="UTF-8">
 <title>Esito registrazione locale</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 </head>
@@ -88,19 +88,19 @@ else{
 <tr><td align="center" style='padding: 10px'>
 <?php
 if($successo == true){
-	print "<h1><img src='Images/ok.png'> Registrazione locale avvenuta con successo.</h1>";
+	print "<h1><img src='Resources/Images/ok.png'> Registrazione locale avvenuta con successo.</h1>";
 	print "Verrai ora reindirizzato alla pagina di riepilogo dei locali...<br/>"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='locali.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>";	
 }
 else{
-	print "<h1><img src='Images/error.png'> Registrazione locale fallita.</h1>";
+	print "<h1><img src='Resources/Images/error.png'> Registrazione locale fallita.</h1>";
 	print "Verrai ora reindirizzato alla pagina di registrazione del locale...<br/>"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='registrazioneLocale.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>";
 }
 ?>
 </td></tr>
 <tr>
-   	<td align="center"><p><img src='Images/loop.gif'></p></td>
+   	<td align="center"><p><img src='Resources/Images/loop.gif'></p></td>
 </tr>
 </table>
 </body>

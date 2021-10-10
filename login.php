@@ -13,7 +13,7 @@ if (isset($_SESSION[$datiProfilo]) || isset($_COOKIE[$randomValue])){
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/dropContentBody.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
@@ -42,7 +42,7 @@ if (isset($_SESSION[$datiProfilo]) || isset($_COOKIE[$randomValue])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
     	<td colspan="2" align="center">
-        	<h1><img src="Images/login.png"> Login</h1>
+        	<h1><img src="Resources/Images/login.png"> Login</h1>
         </td>
 	</tr>
 	<tr>

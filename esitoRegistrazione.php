@@ -53,7 +53,7 @@ else{
 <head>
 <meta charset="UTF-8">
 <title>Esito registrazione</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 </head>
@@ -80,19 +80,19 @@ else{
 <tr><td align="center" style='padding: 10px'>
 <?php
 if($successo == true){
-	print "<h1><img src='Images/ok.png'> Registrazione avvenuta con successo.</h1>\n";
+	print "<h1><img src='Resources/Images/ok.png'> Registrazione avvenuta con successo.</h1>\n";
 	print "Verrai ora reindirizzato alla pagina di login...<br/>\n"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='login.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>\n";	
 }
 else{
-	print "<h1><img src='Images/error.png'> Registrazione fallita.</h1>\n";
+	print "<h1><img src='Resources/Images/error.png'> Registrazione fallita.</h1>\n";
 	print "Verrai ora reindirizzato alla pagina di registrazione...<br/>\n"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='registrazione.php?tipo=$tipo' tabindex='-1'><font color='1E42C1'>QUI</font></a>\n";
 }
 ?>
 </td></tr>
 <tr>
-   	<td align="center"><p><img src='Images/loop.gif'></p></td>
+   	<td align="center"><p><img src='Resources/Images/loop.gif'></p></td>
 </tr>
 </table>
 </body>

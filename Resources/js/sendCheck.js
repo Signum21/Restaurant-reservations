@@ -13,7 +13,7 @@ function ControlloRegistrazione(){
 	let ripetiPassword = document.registrazione.ripetiPassword.value;
 	
 	if(nome.trim() === '' || cognome.trim() === '' || username.trim() === '' || password.trim() === '' || ripetiPassword.trim() === '' || giorno === 'Giorno' || mese === 'Mese' || anno === 'Anno'){
-		$("#check_empty").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> Riempi tutti i campi.</font>');
+		$("#check_empty").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> Riempi tutti i campi.</font>');
 		i++;
 	}
 	else { 
@@ -21,7 +21,7 @@ function ControlloRegistrazione(){
 	}
 	
 	if(usernameAvailable === false){
-		$("#check_username2").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> Username non disponibile.</font>');
+		$("#check_username2").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> Username non disponibile.</font>');
 		document.registrazione.username.focus();
 		i++;
 	}
@@ -30,7 +30,7 @@ function ControlloRegistrazione(){
 	}
 	
 	if(password.trim() !== ripetiPassword.trim()){
-		$("#check_password").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> Le password inserite non coincidono.</font>');
+		$("#check_password").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> Le password inserite non coincidono.</font>');
 		document.registrazione.ripetiPassword.value = "";
 		document.registrazione.ripetiPassword.focus();
 		i++;
@@ -69,7 +69,7 @@ function ControlloUsername(){
 
 function checkUsernameResult(image, available, response) {
 	$("#username").css('width', '89%');
-	$("#check_username").html('<img align="center" src="Images/' + image + '">');
+	$("#check_username").html('<img align="center" src="Resources/Images/' + image + '">');
 	usernameAvailable = available;
 	beforeResponse = response;
 }
@@ -83,7 +83,7 @@ function controlloRegistrazioneLocale(){
 	let civicoLocale = document.registrazioneLocale.civicoLocale.value;
 	
 	if(nomeLocale.trim() === '' || numeroLocale.trim() === '' || cittaLocale.trim() === '' || CAP.trim() === '' || indirizzoLocale.trim() === '' || civicoLocale.trim() === ''){
-		$("#check_empty_locale").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> Riempi tutti i campi.</font>');
+		$("#check_empty_locale").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> Riempi tutti i campi.</font>');
 		return false;
 	}
 }
@@ -99,7 +99,7 @@ function controlloPrenotazione(){
 	
 	if(giorno === 'Giorno' || mese === 'Mese' || anno === 'Anno' || ora === 'Ora' ||  minuto === 'Minuto' ||  persone === 'Persone'){
 		i++;
-		$("#check_empty").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> Riempi tutti i campi.</font>');
+		$("#check_empty").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> Riempi tutti i campi.</font>');
 	}
 	else { 
 		$("#check_empty").html(''); 
@@ -118,7 +118,7 @@ function controlloPrenotazione(){
 	
 	if(e > 0){
 		i++;
-		$("#check_menu").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> Seleziona almeno un piatto del menù.</font>');
+		$("#check_menu").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> Seleziona almeno un piatto del menù.</font>');
 	}
 	else { 
 		$("#check_menu").html(''); 
@@ -151,7 +151,7 @@ function controlloPagamento(idUtente, idLocale, _menu){
 	
 	if(nome.trim() === '' || numero.trim() === '' || meseScadenza === 'Mese' || annoScadenza === 'Anno' ||  cvv.trim() === ''){
 		i++;
-		$("#check_empty").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> Riempi tutti i campi.</font>');
+		$("#check_empty").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> Riempi tutti i campi.</font>');
 	}
 	else { 
 		$("#check_empty").html(''); 
@@ -169,10 +169,10 @@ function controlloPagamento(idUtente, idLocale, _menu){
 			
 			function(response){
 				if(response === '1'){
-					$('#risultato').html('<h3><img src="Images/smallOk.png" style="vertical-align:top"> Richiesta di prenotazione avvenuta con successo </h3> Per essere valida la prenotazione dovrà essere accettata dal proprietario del locale <br> Clicca <a href="elencoPrenotazioni.php" tabindex="-1"><font color="1E42C1">qui</font></a> per verificare lo stato delle tue prenotazioni');					
+					$('#risultato').html('<h3><img src="Resources/Images/smallOk.png" style="vertical-align:top"> Richiesta di prenotazione avvenuta con successo </h3> Per essere valida la prenotazione dovrà essere accettata dal proprietario del locale <br> Clicca <a href="elencoPrenotazioni.php" tabindex="-1"><font color="1E42C1">qui</font></a> per verificare lo stato delle tue prenotazioni');					
 				}
 				else {
-					$('#risultato').html('<h3><img src="Images/smallError.png" style="vertical-align:top"> Prenotazione fallita </h3> Clicca <a href="visualizzaLocale.php?Id='+idLocale+'" tabindex="-1"><font color="1E42C1">qui</font></a> per tornare alla pagina del locale'); 
+					$('#risultato').html('<h3><img src="Resources/Images/smallError.png" style="vertical-align:top"> Prenotazione fallita </h3> Clicca <a href="visualizzaLocale.php?Id='+idLocale+'" tabindex="-1"><font color="1E42C1">qui</font></a> per tornare alla pagina del locale'); 
 				}
 			}
 		});
@@ -187,7 +187,7 @@ function controlloData(_anno, _mese, _giorno){
 		if(_mese !== 'Mese' && _mese == today.getMonth()+1){
 			if(_giorno !== 'Giorno' && _giorno <= today.getDate()){
 				i++;
-				$("#check_date").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> La data deve essere nel futuro.</font>');
+				$("#check_date").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> La data deve essere nel futuro.</font>');
 			}
 			else { 
 				$("#check_date").html(''); 
@@ -195,7 +195,7 @@ function controlloData(_anno, _mese, _giorno){
 		}
 		else if(_mese !== 'Mese' && _mese < today.getMonth()+1){
 			i++;
-			$("#check_date").html('<font color="red"><img src="Images/smallWarning.png" style="vertical-align:top"> La data deve essere nel futuro.</font>');
+			$("#check_date").html('<font color="red"><img src="Resources/Images/smallWarning.png" style="vertical-align:top"> La data deve essere nel futuro.</font>');
 		}
 		else { 
 			$("#check_date").html(''); 

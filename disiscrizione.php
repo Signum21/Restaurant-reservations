@@ -42,7 +42,7 @@ header("refresh:2; url=index.php");
 <head>
 <meta charset="UTF-8">
 <title>Esito disiscrizione</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 </head>
@@ -69,19 +69,19 @@ header("refresh:2; url=index.php");
 <tr><td align="center" style='padding: 10px'>
 <?php
 if($successo == true){
-	print "<h1><img src='Images/ok.png'> Disiscrizione avvenuta con successo.</h1>\n";
+	print "<h1><img src='Resources/Images/ok.png'> Disiscrizione avvenuta con successo.</h1>\n";
 	print "Verrai ora reindirizzato alla homepage...<br/>\n"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='index.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>\n";	
 }
 else{
-	print "<h1><img src='Images/error.png'> Disiscrizione fallita.</h1>\n";
+	print "<h1><img src='Resources/Images/error.png'> Disiscrizione fallita.</h1>\n";
 	print "Verrai ora reindirizzato alla homepage...<br/>\n"; 
 	print "Se il browser non reindirizza in automatico la pagina clicca <a href='index.php' tabindex='-1'><font color='1E42C1'>QUI</font></a>\n";
 }
 ?>
 </td></tr>
 <tr>
-   	<td align="center"><p><img src='Images/Loop.gif'></p></td>
+   	<td align="center"><p><img src='Resources/Images/Loop.gif'></p></td>
 </tr>
 </table>
 </body>

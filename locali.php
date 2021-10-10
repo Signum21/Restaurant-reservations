@@ -50,7 +50,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title>Locali</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/dropContentBody.css">
@@ -72,7 +72,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white">
 	<tr>
 		<td align="center" style="min-width: 150px;  padding: 5px;" colspan="4"><h1>
-			<img src="Images/cutlery.png" style="vertical-align: middle;"> Locali <img src="Images/cutlery.png">
+			<img src="Resources/Images/cutlery.png" style="vertical-align: middle;"> Locali <img src="Resources/Images/cutlery.png">
 		</h1></td>
 	</tr>
 	<tr>
@@ -85,7 +85,7 @@ else if(!isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 		print "<tr id='".$res3['Id']."'><td align='center'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 		
 		if($res3['Foto1'] === ''){
-			print "src='Images/white.png'>";
+			print "src='Resources/Images/white.png'>";
 		}
 		else{
 			print "src='data:image;base64,".$res3['Foto1']."'>";

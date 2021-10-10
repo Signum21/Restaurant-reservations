@@ -47,7 +47,7 @@ else{
 <head>
 <meta charset="UTF-8">
 <title>Menù</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/dragStyle.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
@@ -71,7 +71,7 @@ else{
 <form id="menu">
 <table align="center" border="5" bordercolor="1E42C1" bgcolor="white" id="addMenu">
 	<tr>
-		<td align="center" colspan="6"><h1><img src="Images/cutlery.png" style="vertical-align: middle"> Menù <?php print $NomeLocale ?> <img src="Images/cutlery.png"></h1></td>
+		<td align="center" colspan="6"><h1><img src="Resources/Images/cutlery.png" style="vertical-align: middle"> Menù <?php print $NomeLocale ?> <img src="Resources/Images/cutlery.png"></h1></td>
 	</tr>
 	<tr>
 		<td id="redTipo">
@@ -100,7 +100,7 @@ else{
 				<td align='center' style='word-break: break-all;' width='300px'>".$res['Ingredienti']."</td><td align='center'><img style='height: 60px; width: 90px; background-size: cover; padding: 5px;' ";
 		
 		if($res['Foto'] === ''){
-			print "src='Images/white.png'>";
+			print "src='Resources/Images/white.png'>";
 		}
 		else{
 			print "src='data:image;base64,".$res['Foto']."'>";

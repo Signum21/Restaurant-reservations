@@ -43,7 +43,7 @@ function addMenuResult(response){
 		$('#addMenu').append(response);
 		
 		if($('#'+conta).attr('src') === 'data:image;base64,'){
-			$('#'+conta).attr('src','Images/white.png');
+			$('#'+conta).attr('src','Resources/Images/white.png');
 		}			
 		conta++;
 		$('#menu')[0].reset();										

@@ -29,7 +29,7 @@ if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 <head>
 <meta charset="UTF-8">
 <title>Home</title>
-<link rel="shortcut icon" href="Images/smallCutlery.png">
+<link rel="shortcut icon" href="Resources/Images/smallCutlery.png">
 <link rel="stylesheet" type="text/css" href="Resources/css/styles.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/dropContentBody.css">
 <link rel="stylesheet" type="text/css" href="Resources/css/header.css">
@@ -88,21 +88,21 @@ if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 	<tr><td align="center"><h3>
 		<?php
 		if (isset($_SESSION[$datiProfilo])){
-			print "<a href='profilo.php' style='padding: 10px'><font color='1E42C1'>Profilo </font><img src='Images/profile.png'></a></h3></td>\n";
+			print "<a href='profilo.php' style='padding: 10px'><font color='1E42C1'>Profilo </font><img src='Resources/Images/profile.png'></a></h3></td>\n";
 			
 			if($_SESSION[$datiProfilo]['Tipo']==='Proprietario'){
-				print "<td align='center'><h3><a href='locali.php' style='padding: 10px'><font color='1E42C1'>Locali </font><img src='Images/smallCutlery.png'></a></h3></tr>";
+				print "<td align='center'><h3><a href='locali.php' style='padding: 10px'><font color='1E42C1'>Locali </font><img src='Resources/Images/smallCutlery.png'></a></h3></tr>";
 			}
 			else{
-				print "<td align='center'><h3><a href='ricercaLocali.php' style='padding: 10px'><font color='1E42C1'>Cerca locali </font><img src='Images/find.png'></a></h3></tr>";
+				print "<td align='center'><h3><a href='ricercaLocali.php' style='padding: 10px'><font color='1E42C1'>Cerca locali </font><img src='Resources/Images/find.png'></a></h3></tr>";
 			}
-			print "<tr><td align='center' colspan='2'><h3><a href='logout.php' style='padding: 10px'><font color='1E42C1'>Esci </font><img src='Images/logout.png'></a></h3>\n";
+			print "<tr><td align='center' colspan='2'><h3><a href='logout.php' style='padding: 10px'><font color='1E42C1'>Esci </font><img src='Resources/Images/logout.png'></a></h3>\n";
 		}
 		else{
-			print "<a href='login.php' style='padding: 27px'><font color='1E42C1'>Entra </font><img src='Images/login.png'></a></h3></td>\n";
+			print "<a href='login.php' style='padding: 27px'><font color='1E42C1'>Entra </font><img src='Resources/Images/login.png'></a></h3></td>\n";
 			print "<td align='center'>
 						<ul id='ulReg'>
-							<li class='drop'><h3><a><font color='1E42C1'>Registrati </font><img src='Images/signin.png'></a></h3>\n
+							<li class='drop'><h3><a><font color='1E42C1'>Registrati </font><img src='Resources/Images/signin.png'></a></h3>\n
 								<div class='drop-content' id='index'>
 									<a href='registrazione.php?tipo=Cliente' tabindex='-1'>Cliente</a>\n
 									<a href='registrazione.php?tipo=Proprietario' tabindex='-1'>Proprietario</a>\n
