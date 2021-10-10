@@ -81,7 +81,7 @@ if(isset($_COOKIE[$randomValue]) && !isset($_SESSION[$datiProfilo])){
 			print " Benvenuto ".$_SESSION[$datiProfilo]['Username']."! ";
 		}
 		else { 
-			print " Benvenuto nel mio sito! "; 
+			print " Benvenuto! "; 
 		}
 		?>
 	</h1></td></tr>
