@@ -15,4 +15,4 @@ Import the file db_setup.sql which will create the database and all the tables y
 
 
 <h2>Homepage</h2>
-<img width="960" alt="home" src="https://user-images.githubusercontent.com/22285224/135196031-b3817b7e-ffe3-4c7a-8252-86f063a508cd.png">
+<img width="960" alt="Homepage screenshot" src="https://user-images.githubusercontent.com/22285224/136699268-deb2bd88-c826-412b-afd9-2c2eb89b77ef.png">
