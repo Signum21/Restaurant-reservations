@@ -1,17 +1,15 @@
 # Restaurants
 
-This is a project I made in 2018 for the final exam in high school therefore it's very raw and it's mostly in my native language (italian).
+This is a web application I developed in 2018 as my final high school exam project. </br>
+While it's fairly basic, it demonstrates the core functionality of a restaurant management system.
 
-This web application allows owners to put their restaurants online so that the clients can look through the menu, the prices and the photos of the dishes and make a reservations for a specific date.
-<br/><br/>
-
+The application allows restaurant owners to showcase their business online by publishing their menu, prices, and photos of their dishes. Customers can browse this information and make reservations for a specific date directly through the platform.
 
 ## Instructions
 
-If you want to test it you'll need a web server and MySQL.<br/>
-You can change the database settings on the env.json file.<br/>
-Import the file db_setup.sql which will create the database and all the tables you need to save the data.
-<br/><br/>
+To test the application, you'll need a web server and MySQL. </br>
+You can configure the database settings in the `env.json` file. </br>
+Import the `db_setup.sql` file to create the database and all the necessary tables for storing the data.
 
 
 ## Homepage
